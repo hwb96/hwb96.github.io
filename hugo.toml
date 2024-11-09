@@ -1,20 +1,20 @@
 baseurl = "https://hwb96.github.io/"
-title = "hanwenbo's blog"
-copyright = "Copyright &copy; 2023 - Author Name"
+#title = "New Hipster by Han Wenbo"
+title = "Han Wenbo"
 canonifyurls = true
 theme = "hugo-kiera"
 
+# 分页设置
 [pagination]
-  pagersize = 3
+  pagersize = 3  # 每页显示的文章数
   path = 'page'
 
-summaryLength = 30
-enableEmoji = true
-pygmentsCodeFences = true
+# 基本设置
+summaryLength = 30  # 摘要长度
+enableEmoji = true  # 启用 emoji 支持
+pygmentsCodeFences = true  # 启用代码高亮
 
-#disqusShortname = "myShortName"
-
-# Note: to disable a social network icon delete or comment out the corresponding line
+# 作者信息设置
 [params.author]
     name = "HanWenbo"
     github = "hwb96"
@@ -24,32 +24,35 @@ pygmentsCodeFences = true
     twitter = "reply2099"
     #instagram = "username"
     #stackoverflow = "username"
-    #youtube = "user/username" # or channel/channelname
+    #youtube = "user/username"
     #devto = "username"
 
 [params]
-    tagline = "A Hugo theme for creative and technical writing"
-    description = "Kiera: A Hugo theme for creative and technical writing."
-    images = [""] #This is used for opengraph/twitter cards.
-    customCSS = []  #Optional Customised CSS
-    #favicon = ""
-    #utterancesRepo = "username/repository"
-    #utterancesIssueTerm = "pathname"
-    #homepageLength = 10
-    #commentAutoload = true  #This mean reader don't need click, disqus comment autoload
-    mathjax = true #Enable display of mathematics using mathjax (LaTeX syntax)
-    #katex = true #Enable display of mathematics using katex (Faster LaTeX rendering)
-    #google_fonts = ["Staatliches"] # Adds additional google fonts
-    #disableDarkModeCSS = false # disables css style for users using dark-mode
+    tagline = "For creative and technical writing"
+    #description = "Kiera: A Hugo theme for creative and technical writing."
+    #images = [""] # 用于 opengraph/twitter cards
 
-# uncomment to enable the Tags link on the main toolbar
+    # 自定义 CSS 文件路径（注意：这里只写路径）
+    customCSS = ["/css/custom.css"]  # 指向你的自定义 CSS 文件
+
+    homepageLength = 10  # 主页显示的文章数量
+
+    # 添加 Google 中文字体
+    google_fonts = [
+        "Playfair Display:400,700",
+        "PT Serif:400,700",
+        "Merriweather:400,700"
+    ]
+
+    #disableDarkModeCSS = false  # 是否禁用暗黑模式 CSS
+
+# 菜单设置（取消注释可启用）
 #  [[menu.main]]
 #    identifier = "tags"
 #    name = "Tags"
 #    url = "/tags"
 #    weight = 1
-
-# uncomment to enable the Categories link on the main toolbar
+#
 #  [[menu.main]]
 #    identifier = "categories"
 #    name = "Categories"

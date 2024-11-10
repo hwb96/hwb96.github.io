@@ -4,7 +4,7 @@ date = 2024-11-10T15:40:00+08:00
 images = []
 tags = []
 categories = []
-draft = true
+draft = false
 +++
 从 BelliWelli风靡到投票站: Z世代的"排队文化学"：当健康零食、Taylor Swift 周边与"i voted"贴纸都成为打卡必需
 

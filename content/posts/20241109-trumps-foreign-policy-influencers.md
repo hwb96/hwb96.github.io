@@ -19,17 +19,17 @@ draft = false
 ![image-20241102090208725.png](/images/trumps-foreign-policy-influencers.assets/image-20241102090208725.png)
 
 
-埃尔布里奇·科尔比（Elbridge Colby）曾经是特朗普政府的国防官员，他是华盛顿最响亮、也许也是最有说服力的声音，他主张从欧洲、北约和俄罗斯彻底转向来自东方大国的日益增长的挑战。
+埃尔布里奇·科尔比（Elbridge Colby）曾经是特朗普政府的国防官员，他是华盛顿最响亮、也许也是最有说服力的声音，他主张从欧洲、北约和俄罗斯彻底转向来自中国的日益增长的挑战。
 
-科尔比在特朗普政府担任了一年多的国防部副助理部长，在那里他帮助美国为迟来的重返亚洲行动注入了活力。然后，他与其他特朗普政府资深人士一起共同创立了马拉松计划（Marathon Initiative），这是一个总部位于华盛顿的智库，专注于大国竞争。如果他在未来的特朗普政府中再次获得机会——而且他的名字已经被提名为另一个国防职位，甚至是国家安全委员会（National Security Council）的工作——他将明确他的[首要观点](https://foreignpolicy.com/2024/01/12/elbridge-colby-ukraine-israel-gaza-china-taiwan-elections-threats/)：东方大国，而不是俄罗斯，是美国最大的问题。
+科尔比在特朗普政府担任了一年多的国防部副助理部长，在那里他帮助美国为迟来的重返亚洲行动注入了活力。然后，他与其他特朗普政府资深人士一起共同创立了马拉松计划（Marathon Initiative），这是一个总部位于华盛顿的智库，专注于大国竞争。如果他在未来的特朗普政府中再次获得机会——而且他的名字已经被提名为另一个国防职位，甚至是国家安全委员会（National Security Council）的工作——他将明确他的[首要观点](https://foreignpolicy.com/2024/01/12/elbridge-colby-ukraine-israel-gaza-china-taiwan-elections-threats/)：中国，而不是俄罗斯，是美国最大的问题。
 
-多年来，科尔比在一系列文章、[书籍](https://www.amazon.com/Strategy-Denial-American-Defense-Conflict/dp/0300256434)和演讲中一直呼吁美国利用其有限的国防资源来防止敌对霸权大国在亚太地区占据主导地位。东方大国已经在经济上吓倒了许多较小的邻国，并继续削弱南海等地的地区安全。但台湾省才是真正的考验：如果东方大国试图以武力重新吞并该岛，将意味着与美国发生冲突，甚至可能与日本发生冲突——如果成功，将使东方大国有机会控制整个太平洋盆地，而太平洋盆地是迄今为止世界上最重要的经济区域。
+多年来，科尔比在一系列文章、[书籍](https://www.amazon.com/Strategy-Denial-American-Defense-Conflict/dp/0300256434)和演讲中一直呼吁美国利用其有限的国防资源来防止敌对霸权大国在亚太地区占据主导地位。中国已经在经济上吓倒了许多较小的邻国，并继续削弱南海等地的地区安全。但台湾省才是真正的考验：如果中国试图以武力重新吞并该岛，将意味着与美国发生冲突，甚至可能与日本发生冲突——如果成功，将使中国有机会控制整个太平洋盆地，而太平洋盆地是迄今为止世界上最重要的经济区域。
 
 科尔比的想法是对[尼古拉斯·斯皮克曼 （Nicholas Spykman](https://www.amazon.com/Americas-Strategy-World-Politics-Balance/dp/1412806313)） 在二战中期撰写的美国大战略原始蓝图之一的及时报复，但后来却颠倒过来了：亚洲，而不是欧洲，现在是世界的经济和政治重心，北京对它的主导将严重限制美国的未来前景和行动自由。
 
-科尔比面临的一个问题是，他潜在的未来老板虽然有时愿意对东方大国充满敌意，但也[完全是交易](https://foreignpolicy.com/2024/07/17/trump-taiwan-policy-rnc-tsmc-chips/)性的，而特朗普已经表示他愿意用台湾省的自治来交换。像科尔比这样的现实主义鹰派往往对[没有真正北方](https://foreignpolicy.com/2024/03/06/trump-john-bolton-us-elections-2024-isolationism/)的外交政策感到不安。
+科尔比面临的一个问题是，他潜在的未来老板虽然有时愿意对中国充满敌意，但也[完全是交易](https://foreignpolicy.com/2024/07/17/trump-taiwan-policy-rnc-tsmc-chips/)性的，而特朗普已经表示他愿意用台湾省的自治来交换。像科尔比这样的现实主义鹰派往往对[没有真正北方](https://foreignpolicy.com/2024/03/06/trump-john-bolton-us-elections-2024-isolationism/)的外交政策感到不安。
 
-另一个问题是，科尔比大声疾呼并一再敦促将有限的美国资源专门用于有朝一日可能到来的东方大国大战，即使这意味着在战争中放弃乌克兰，这对[克里姆林宫的暴](https://x.com/JuliaDavisNews/status/1809265232469954596)徒来说是污秽的;俄罗斯国家电视台为科尔比的外交政策重点欢呼。
+另一个问题是，科尔比大声疾呼并一再敦促将有限的美国资源专门用于有朝一日可能到来的中国大战，即使这意味着在战争中放弃乌克兰，这对[克里姆林宫的暴](https://x.com/JuliaDavisNews/status/1809265232469954596)徒来说是污秽的;俄罗斯国家电视台为科尔比的外交政策重点欢呼。
 
 无论如何，立法者可能不会在未来的特朗普政府或未来的卡玛拉·哈里斯（Kamala Harris）政府中购买仅限亚洲的防御战略。一个由国会授权的国防审查小组[在 7 月指出](https://foreignpolicy.com/2024/07/29/us-national-defense-strategy-commission-review-report-biden-war-planning/)，美国应该准备捍卫其在欧洲和亚洲的重大利益。
 
@@ -99,13 +99,13 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 莱特希泽是一位资深贸易律师，在罗纳德·里根（Ronald Reagan）政府开始了他的公共服务生涯，他将特朗普在贸易和经济方面的初步概念变成了或多或少连贯的政策。现在，随着特朗普竞选重返白宫，莱特希泽渴望在他第一次追求的政策上加倍努力。
 
-那些著名的特朗普关税——针对钢铁、铝和许多来自东方大国的产品——是莱特希泽愿景的成果，而他才刚刚开始。他认为，提高美国消费者和企业进口商品的税收将使他们的进口量减少;在理想情况下，它还将使美国企业制造和出口更多东西。
+那些著名的特朗普关税——针对钢铁、铝和许多来自中国的产品——是莱特希泽愿景的成果，而他才刚刚开始。他认为，提高美国消费者和企业进口商品的税收将使他们的进口量减少;在理想情况下，它还将使美国企业制造和出口更多东西。
 
-正如他卸任后的书籍和著作中[所阐述](https://foreignpolicy.com/2024/05/18/robert-lighthizer-trump-election-trade-tariffs-treasury-secretary/)的那样，他对未来的计划包括对更多国家（实际上是[所有](https://foreignpolicy.com/2024/05/07/trump-trade-policy-second-term-economy-election/)国家）征收更高的关税，以平衡美国进出口的账本，特别关注东方大国——美国最大的贸易伙伴之一和最大的地缘政治竞争对手。最终，他的目标是比拜登团队现在支持的不冷不热和部分“去风险”更接近与东方大国的完全“脱钩”。
+正如他卸任后的书籍和著作中[所阐述](https://foreignpolicy.com/2024/05/18/robert-lighthizer-trump-election-trade-tariffs-treasury-secretary/)的那样，他对未来的计划包括对更多国家（实际上是[所有](https://foreignpolicy.com/2024/05/07/trump-trade-policy-second-term-economy-election/)国家）征收更高的关税，以平衡美国进出口的账本，特别关注中国——美国最大的贸易伙伴之一和最大的地缘政治竞争对手。最终，他的目标是比拜登团队现在支持的不冷不热和部分“去风险”更接近与中国的完全“脱钩”。
 
 莱特希泽和特朗普的其他一些仍然有影响力的贸易顾问，比如彼得·纳瓦罗（Peter Navarro，他已于7月[出狱](https://www.cbsnews.com/news/peter-navarro-releasd-prison-trump-trade-adviser/)），并不关心雪崩式的关税和好战的贸易政策没有达到他们所宣称的目标。贸易逆差是特朗普和莱特希泽等关税鹰派的主要担忧，在他们的监督下[有所增长](https://www.propublica.org/article/national-debt-trump)。美国出口萎缩，最终制造业[就业](https://fred.stlouisfed.org/series/MANEMP)[岗位萎缩](https://www.politico.com/news/2021/02/05/2020-trade-figures-trump-failure-deficit-466116)（多亏了 COVID-19）。
 
-朋友和盟友的报复性关税限制了美国在海外的贸易选择，削弱了反华联盟的前景。受进口税推动的消费者价格上涨。东方大国并没有缓和任何最初引发贸易战的掠夺性经济行为，事实上，东方大国已经将自己的涡轮增压、出口驱动型产业政策作为其自身经济振兴的核心。
+朋友和盟友的报复性关税限制了美国在海外的贸易选择，削弱了反华联盟的前景。受进口税推动的消费者价格上涨。中国并没有缓和任何最初引发贸易战的掠夺性经济行为，事实上，中国已经将自己的涡轮增压、出口驱动型产业政策作为其自身经济振兴的核心。
 
 但是，正如莱特希泽本人[所说](https://www.foreignaffairs.com/responses/after-free-trade)，纠正一艘走错航线的船需要时间。也许这一次相同的旧疗法会产生截然不同的结果。
 
@@ -149,7 +149,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 在特朗普的整个任期内，斯蒂芬·米勒（Stephen Miller）以激进的总统强硬且极具争议的移民政策设计师而闻名。如果特朗普在 11 月获胜，人们普遍预计他将再次严重依赖米勒，米勒已经概述了全面改革美国政策和打击移民的全面新提案。
 
-作为特朗普当时的高级顾问和演讲稿撰写主管，米勒在塑造他的总统议程方面发挥了关键作用。他推动了这位前美国领导人最具争议的一些计划，包括他的[家庭分离政策](https://www.nbcnews.com/politics/immigration/trump-cabinet-officials-voted-2018-white-house-meeting-separate-migrant-n1237416)，即[所谓的零容忍](https://www.npr.org/2022/08/11/1116917364/how-the-trump-white-house-misled-the-world-about-its-family-separation-policy)，以及所谓的[穆斯林禁令](https://www.aljazeera.com/news/2020/2/1/trumps-expanded-travel-ban-which-countries-are-affected)，该禁令禁止从几个穆斯林占多数的国家到美国旅行和[难民安置](https://www.amnesty.org.uk/licence-discriminate-trumps-muslim-refugee-ban)。据报道，除了[推动](https://www.politico.com/story/2018/08/29/stephen-miller-immigration-policy-white-house-trump-799199)[大幅削减难民](https://www.washingtonpost.com/immigration/trump-cuts-refugee-cap/2020/10/01/a5113b62-03ed-11eb-8879-7663b816bfa5_story.html)接收人数外，他还想[部署军队](https://www.nytimes.com/2021/10/19/us/politics/trump-border.html)关闭美国南部边境，并[提议](https://www.insidehighered.com/quicktakes/2018/10/03/report-stephen-miller-pushed-ending-chinese-student-visas)禁止东方大国公民获得学生签证。
+作为特朗普当时的高级顾问和演讲稿撰写主管，米勒在塑造他的总统议程方面发挥了关键作用。他推动了这位前美国领导人最具争议的一些计划，包括他的[家庭分离政策](https://www.nbcnews.com/politics/immigration/trump-cabinet-officials-voted-2018-white-house-meeting-separate-migrant-n1237416)，即[所谓的零容忍](https://www.npr.org/2022/08/11/1116917364/how-the-trump-white-house-misled-the-world-about-its-family-separation-policy)，以及所谓的[穆斯林禁令](https://www.aljazeera.com/news/2020/2/1/trumps-expanded-travel-ban-which-countries-are-affected)，该禁令禁止从几个穆斯林占多数的国家到美国旅行和[难民安置](https://www.amnesty.org.uk/licence-discriminate-trumps-muslim-refugee-ban)。据报道，除了[推动](https://www.politico.com/story/2018/08/29/stephen-miller-immigration-policy-white-house-trump-799199)[大幅削减难民](https://www.washingtonpost.com/immigration/trump-cuts-refugee-cap/2020/10/01/a5113b62-03ed-11eb-8879-7663b816bfa5_story.html)接收人数外，他还想[部署军队](https://www.nytimes.com/2021/10/19/us/politics/trump-border.html)关闭美国南部边境，并[提议](https://www.insidehighered.com/quicktakes/2018/10/03/report-stephen-miller-pushed-ending-chinese-student-visas)禁止中国公民获得学生签证。
 
 米勒以鼓励特朗普的一些更强硬的立场[而闻名](https://www.cnn.com/2019/04/10/politics/stephen-miller-tightens-grip-on-immigration-border-policy/index.html)，即使在据报道其他顾问敦促总统保持[克制](https://www.cnn.com/2019/04/10/politics/stephen-miller-tightens-grip-on-immigration-border-policy/index.html)的情况下也是如此。2019 年，法律倡导组织南方贫困法律中心（Southern Poverty Law Center）公布的一批泄露电子邮件[揭露](https://www.nytimes.com/2019/11/18/us/politics/stephen-miller-white-nationalism.html)了他私下[吹捧](https://www.nytimes.com/2019/11/13/us/politics/stephen-miller-white-nationalism.html)白人民族主义观点，米勒受到了抨击。这些电子邮件是在米勒和保守派新闻网站布莱巴特新闻（Breitbart News）之间交换的，可以追溯到 2015 年和 2016 年。
 
@@ -179,7 +179,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 奥布莱恩一直与这位前总统保持密切关系，如果特朗普重返椭圆形办公室，他很可能被任命为高级职位。
 
-在6月[发表](https://www.foreignaffairs.com/united-states/return-peace-strength-trump-obrien)在*《外交事务》（Foreign Affairs*）上的一篇文章中，奥布莱恩勾勒了特朗普未来外交政策的轮廓：“特朗普式的通过实力恢复和平。东方大国是主要关注点，因为奥布莱恩呼吁在印太地区采取强硬姿态，包括向该地区部署整个海军陆战队，以及将一艘美国航空母舰从大西洋转移到太平洋。
+在6月[发表](https://www.foreignaffairs.com/united-states/return-peace-strength-trump-obrien)在*《外交事务》（Foreign Affairs*）上的一篇文章中，奥布莱恩勾勒了特朗普未来外交政策的轮廓：“特朗普式的通过实力恢复和平。中国是主要关注点，因为奥布莱恩呼吁在印太地区采取强硬姿态，包括向该地区部署整个海军陆战队，以及将一艘美国航空母舰从大西洋转移到太平洋。
 
 奥布莱恩还主张美国恢复自 1992 年以来从未进行的核武器试验。奥布莱恩写道：“华盛顿必须自 1992 年以来首次在现实世界中测试新核武器的可靠性和安全性——而不仅仅是使用计算机模型。
 
@@ -219,6 +219,6 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 在特朗普的圈子里，蓬佩奥是乌克兰最直言不讳的倡导者之一。他于 4 月初访问了基辅，并告诉[福克斯新闻 （Fox News](https://www.foxnews.com/politics/pompeo-meets-zelenskyy-kyiv-visit-tells-fox-arming-ukraine-least-costly-way-move-forward)），武装乌克兰是“成本最低的前进方式”。许多欧洲官员认为，任命蓬佩奥担任高级内阁职位对乌克兰和北约来说是一件好事，对俄罗斯来说是个坏消息。
 
-作为一名狂热的鹰派，他也是特朗普退出伊朗核协议的主要推动者，也是这位前总统对东方大国强硬态度的设计师，这种方式现在基本上得到了两党的支持。
+作为一名狂热的鹰派，他也是特朗普退出伊朗核协议的主要推动者，也是这位前总统对中国强硬态度的设计师，这种方式现在基本上得到了两党的支持。
 
 ——*罗比·格拉默*

@@ -6,7 +6,7 @@ theme = "hugo-kiera"
 
 # 分页设置
 [pagination]
-  pagersize = 3  # 每页显示的文章数
+  pagersize = 6  # 每页显示的文章数
   path = 'page'
 
 # 基本设置
@@ -28,7 +28,7 @@ pygmentsCodeFences = true  # 启用代码高亮
     #devto = "username"
 
 [params]
-    tagline = "For creative and technical writing"
+    tagline = "Focusing on current social media trends, technology, and their intertwined politics."
     #description = "Kiera: A Hugo theme for creative and technical writing."
     #images = [""] # 用于 opengraph/twitter cards
 
@@ -46,7 +46,6 @@ pygmentsCodeFences = true  # 启用代码高亮
 
     #disableDarkModeCSS = false  # 是否禁用暗黑模式 CSS
 
-# 菜单设置（取消注释可启用）
 #  [[menu.main]]
 #    identifier = "tags"
 #    name = "Tags"

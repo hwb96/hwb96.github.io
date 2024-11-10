@@ -44,7 +44,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
     font-weight: 700;
     color: #000000;
-    letter-spacing: -0.3px;
 }
 
 h1 {
@@ -58,47 +57,49 @@ h2 {
 }
 
 h3 {
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 h4 {
-    font-size: 1.2em;
+    font-size: 0.8em;
 }
 
-/* 日期和阅读时间样式 */
-.post-date{
+/* 调整阅读时间和内容之间的间距 */
+.read-time {
     font-family: "Georgia", serif;
     font-size: 0.9em;
     color: #666;
     font-style: italic;
-    margin: 0.1em 0.1em 0.1em 0.1em;
+    margin: 0;  /* 移除垂直边距 */
+    padding: 0; /* 移除内边距 */
     display: inline-block;
     margin-right: 3em;
 }
 
-.read-time {
-    font-family: "Georgia", serif;
-    font-size: 0.9em;  /* 从 9em 改为 0.9em */
-    color: #666;
-    font-style: italic;
-    margin: 0.2em 0;   /* 修改上下边距为 0.2em */
-    display: inline-block;
-    margin-right: 3em;
-}
-
-/* 文章内容样式 */
+/* 调整文章内容的上边距 */
 .post-content {
     font-family: "Georgia", "PT Serif", serif;
     font-size: 1em;
-    line-height: 1.7;
     color: #326891;
-    margin-top: 1.5em;
+    margin-top: 0.8em;  /* 减小上边距 */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    text-decoration: underline; /* 默认显示下划线 */
-    text-underline-offset: 2px; /* 下划线和文字之间的距离 */
-    transition: all 0.2s ease; /* 平滑过渡效果 */
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+}
+
+/* 日期样式也需要调整以保持一致性 */
+.post-date {
+    font-family: "Georgia", serif;
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin: 0.1;  /* 移除垂直边距 */
+    padding: 0。1; /* 移除内边距 */
+    display: inline-block;
+    margin-right: 3em;
 }
 
 /* 链接样式 */
@@ -150,16 +151,16 @@ pre, code {
 /* 列表样式 */
 ul, ol {
     font-family: "Georgia", "PT Serif", serif;
-    margin-bottom: 1em;
-    margin-top: 0.5em;
-    padding-left: 1.5em;
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    padding-left: 0.1em;
     line-height: 1.6;
 }
 
 /* 文章摘要样式 */
 .post-summary {
     font-family: "Georgia", "PT Serif", serif;
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.6;
     color: #444;
 }

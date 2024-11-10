@@ -6,7 +6,7 @@ tags = []
 categories = []
 draft = false
 +++
-从 BelliWelli风靡到投票站: Z世代的"排队文化学"：当健康零食、Taylor Swift 周边与"i voted"贴纸都成为打卡必需
+当健康零食、Taylor Swift 周边与"i voted"贴纸都成为打卡必需。
 
 tiktok流行趋势：BelliWelli健康食品，"i voted"贴纸，政治态度隐藏，打卡文化
 

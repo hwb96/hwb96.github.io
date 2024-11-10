@@ -28,7 +28,7 @@ pygmentsCodeFences = true  # 启用代码高亮
     #devto = "username"
 
 [params]
-    tagline = "Focusing on current social media trends, technology, and their intertwined politics."
+    tagline = "Focus on technology, current social media trends,  and their intertwined politics."
     #description = "Kiera: A Hugo theme for creative and technical writing."
     #images = [""] # 用于 opengraph/twitter cards
 

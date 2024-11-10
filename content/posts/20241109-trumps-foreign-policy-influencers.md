@@ -16,8 +16,8 @@ draft = false
 来源：https://foreignpolicy.com/2024/08/26/trump-foreign-policy-influencers-us-election-china-trade-nato-ukraine/
 
 ## 埃尔布里奇·科尔比
+![image-20241102090208725.png](/images/trumps-foreign-policy-influencers.assets/image-20241102090208725.png)
 
-<img src="20241102.assets/image-20241102090208725.png" alt="image-20241102090208725" style="zoom: 50%;" />
 
 埃尔布里奇·科尔比（Elbridge Colby）曾经是特朗普政府的国防官员，他是华盛顿最响亮、也许也是最有说服力的声音，他主张从欧洲、北约和俄罗斯彻底转向来自东方大国的日益增长的挑战。
 
@@ -37,7 +37,7 @@ draft = false
 
 ## 弗雷德·弗莱茨
 
-![image-20241102085102435](20241102.assets/image-20241102085102435.png)
+![image-20241102085102435](/images/trumps-foreign-policy-influencers.assets/image-20241102085102435.png)
 
 尽管弗雷德·弗莱茨 （Fred Fleitz） 是美国国家安全界的长期成员，但他是特朗普驱动的反建制 MAGA 意识形态的坚定支持者，该意识形态在华盛顿肆虐了四年。弗莱茨是特朗普政府的资深人士，在竞选过程中，他已成为前总统为数不多的国家安全高级顾问之一。
 
@@ -55,7 +55,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## **里克·格雷内尔**
 
-![image-20241102085123609](20241102.assets/image-20241102085123609.png)
+![image-20241102085123609](/images/trumps-foreign-policy-influencers.assets/image-20241102085123609.png)
 
 2018 年，特朗普的新任驻柏林大使里克·格雷内尔 （Ric Grenell） 在向德国总统弗兰克-瓦尔特·施泰因迈尔 （Frank-Walter Steinmeier） 提交外交证书后几个小时内，就在推特[上要求](https://www.reuters.com/article/iran-nuclear-germany-grenell/german-firms-should-wind-down-iran-operations-immediately-u-s-envoy-idINS8N1RX001/)与伊朗有业务往来的德国公司“立即停止运营”。从那时起，外交关系就走下坡路了。
 
@@ -79,7 +79,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## **基思·凯洛格**
 
-![image-20241102085140685](20241102.assets/image-20241102085140685.png)
+![image-20241102085140685](/images/trumps-foreign-policy-influencers.assets/image-20241102085140685.png)
 
 当迈克尔·弗林（Michael Flynn）在特朗普的第一个任期仅 22 天后因在与俄罗斯驻美国大使的谈话中撒谎而被解雇时，基思·凯洛格 （Keith Kellogg） 是第一批被考虑接替他的人之一。他没有得到这份工作，这份工作交给了另一位三星级陆军军官：H.R. McMaster。相反，凯洛格为副总统迈克·彭斯 （Mike Pence） 提供建议，并担任国家安全委员会 （National Security Council） 的幕僚长。
 
@@ -93,7 +93,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## **罗伯特·莱特希泽**
 
-![image-20241102085239596](20241102.assets/image-20241102085239596.png)
+![image-20241102085239596](/images/trumps-foreign-policy-influencers.assets/image-20241102085239596.png)
 
 特朗普政府中很少有成员仍然对政策保持很大程度的影响力。但特朗普的贸易代表、现任顾问，[也许](https://www.wsj.com/politics/elections/donald-trump-treasury-secretary-cabinet-pick-08582962?mod=article_inline)是未来的财政部长罗伯特·莱特希泽（Robert Lighthizer）已经成为一个如此有影响力的经济声音，特别是通过他对贸易的回归愿景，他帮助塑造了拜登政府对贸易战的新热爱。
 
@@ -113,7 +113,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## 约翰尼·麦肯蒂
 
-![image-20241102085255570](20241102.assets/image-20241102085255570.png)
+![image-20241102085255570](/images/trumps-foreign-policy-influencers.assets/image-20241102085255570.png)
 
 2020 年夏天，当特朗普竞选连任时，来自白宫的一封电子邮件邀请五角大楼官员坐下来与两名工作人员进行面谈，他们将在接受特朗普第二届政府职位的评估。随着白宫越来越多地寻求在国防部之上维护自己，大楼里出现了一连串高调的辞职事件，官员们将这些采访视为对特朗普忠诚度的考验。
 
@@ -129,7 +129,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## **克里斯托弗·米勒**
 
-![image-20241102085309109](20241102.assets/image-20241102085309109.png)
+![image-20241102085309109](/images/trumps-foreign-policy-influencers.assets/image-20241102085309109.png)
 
 克里斯托弗·米勒 （Christopher Miller） 在 2020 年 11 月被任命为特朗普的代理国防部长后，在早期出现了一些失误——字面意思。首先，他在爬上台阶进入五角大楼的路[上被绊倒](https://taskandpurpose.com/news/chris-miller-pentagon-steps/)了。两天后，当他起身在美国陆军国家博物馆发表他的第一次公开演讲时，他把准备好的演讲[忘在](https://www.c-span.org/video/?478069-1/national-army-museum-opening-ceremony)了座位下。
 
@@ -145,7 +145,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## **斯蒂芬·米勒**
 
-![image-20241102085321946](20241102.assets/image-20241102085321946.png)
+![image-20241102085321946](/images/trumps-foreign-policy-influencers.assets/image-20241102085321946.png)
 
 在特朗普的整个任期内，斯蒂芬·米勒（Stephen Miller）以激进的总统强硬且极具争议的移民政策设计师而闻名。如果特朗普在 11 月获胜，人们普遍预计他将再次严重依赖米勒，米勒已经概述了全面改革美国政策和打击移民的全面新提案。
 
@@ -165,7 +165,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## 罗伯特·奥布莱恩
 
-![image-20241102085337133](20241102.assets/image-20241102085337133.png)
+![image-20241102085337133](/images/trumps-foreign-policy-influencers.assets/image-20241102085337133.png)
 
 特朗普在上任的头两年里轮换了三位国家安全顾问，最后确定了一位恰到好处的人选：罗伯特·奥布莱恩（Robert O'Brien）。他在特朗普总统任期的剩余时间里一直留在那里。
 
@@ -187,7 +187,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## **卡什·帕特尔**
 
-![image-20241102085351495](20241102.assets/image-20241102085351495.png)
+![image-20241102085351495](/images/trumps-foreign-policy-influencers.assets/image-20241102085351495.png)
 
 卡什·帕特尔（Kash Patel）在特朗普任期内迅速崛起，尽管没有军事背景，但在政府的最后几个月里，她从众议院情报委员会（House Intelligence Committee）名不见经传的幕僚升为幕僚长，最后成为代理国防部长。作为时任众议院情报委员会主席的众议员德文·努内斯（Devin Nunes）的助手，帕特尔在挑战特朗普团队在竞选期间与俄罗斯政府官员有不当接触的指控[方面发挥了核心](https://www.washingtonpost.com/opinions/2021/04/16/kash-patel-trump-intelligence-community/)作用。
 
@@ -205,7 +205,7 @@ Fleitz 在美国政府工作了二十多年，在中央情报局、国防情报�
 
 ## **迈克·蓬佩奥**
 
-![image-20241102085403897](20241102.assets/image-20241102085403897.png)
+![image-20241102085403897](/images/trumps-foreign-policy-influencers.assets/image-20241102085403897.png)
 
 迈克·蓬佩奥（Mike Pompeo）是为数不多的在特朗普内阁官员之一，在他的任期内与这位傲慢而善变的总统保持着牢固的关系。特朗普将蓬佩奥从堪萨斯州国会议员时期相对默默无闻中拉出来，成为他的第一任中央情报局局长。作为美国首屈一指的情报机构（U.S. Key Intelligence Agency）的负责人，蓬佩奥（Pompeo）涉足外交领域，秘密[前往](https://www.washingtonpost.com/politics/us-china-trade-dispute-looms-over-trump-summit-with-japans-abe/2018/04/17/2c94cb02-424f-11e8-bba2-0976a82b05a2_story.html)朝鲜，为特朗普与朝鲜领导人金正恩（Kim Jong Un）之间的直接会谈奠定基础。
 

@@ -26,6 +26,9 @@ tiktok流行趋势：BelliWelli健康食品，“i voted&#34;贴纸，政治态�
 
 <meta name="generator" content="Hugo 0.138.0">
     
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="http://localhost:1313/js/mathjax-config.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 
   <link rel="stylesheet" href="http://localhost:1313/css/normalize.min.css" />
   <link rel="stylesheet" href="http://localhost:1313/fontawesome/css/all.min.css" />
@@ -65,6 +68,24 @@ tiktok流行趋势：BelliWelli健康食品，“i voted&#34;贴纸，政治态�
     
 <nav>
     <ul>
+        
+        <li>
+            <a class="active" href="http://localhost:1313/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://localhost:1313/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://localhost:1313/about/about-me/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
         
     </ul>
 </nav>
@@ -153,13 +174,78 @@ tiktok流行趋势：BelliWelli健康食品，“i voted&#34;贴纸，政治态�
         </li>
         <li>
         
-            <a href="http://localhost:1313/posts/20241111-claude-artifact-system-explained/">Claude Artifact原理探究 <i class="fa fa-chevron-circle-right"></i> </a>
+            <a href="http://localhost:1313/posts/20241111-claude-artifact-system-explained/">Claude Artifacts原理探究 <i class="fa fa-chevron-circle-right"></i> </a>
         
         </li>
     </ul>
 </section>
   
     
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'momo';
+            var disqus_button = document.getElementById("show-comments");
+
+            var disqus_autoload =  true ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
+            disqus_button.style.display = "";
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+
     
   
 

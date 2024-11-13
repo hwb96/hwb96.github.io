@@ -1,0 +1,220 @@
+<!doctype html>
+
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>About - Han Wenbo</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/about/%E9%97%AE/">
+  <meta property="og:site_name" content="Han Wenbo">
+  <meta property="og:title" content="About">
+  <meta property="og:description" content="关于我 这里是关于我的介绍…
+联系方式 Email: xxx@xxx.com GitHub: 我的GitHub 个人兴趣 xxx xxx">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="about">
+    <meta property="article:published_time" content="2024-11-13T09:22:41+08:00">
+    <meta property="article:modified_time" content="2024-11-13T09:22:41+08:00">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About">
+  <meta name="twitter:description" content="关于我 这里是关于我的介绍…
+联系方式 Email: xxx@xxx.com GitHub: 我的GitHub 个人兴趣 xxx xxx">
+
+<meta name="generator" content="Hugo 0.138.0">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="http://localhost:1313/js/mathjax-config.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+
+  <link rel="stylesheet" href="http://localhost:1313/css/normalize.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/fontawesome/css/all.min.css" />
+  
+    
+    <link href="//fonts.googleapis.com/css?family=Playfair Display:400,700|PT Serif:400,700|Merriweather:400,700" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.css" /><link rel='stylesheet' href='http://localhost:1313/css/custom.css'>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      
+      <h1>
+        <a href="http://localhost:1313/">Han Wenbo</a>
+      </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/hwb96" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/reply2099" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>Focus on technology, current social media trends,  and their intertwined politics.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="active" href="http://localhost:1313/about/%E9%97%AE/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>About</h1>
+
+    
+
+    
+      
+
+    
+
+    <h2 id="关于我">关于我</h2>
+<p>这里是关于我的介绍&hellip;</p>
+<h2 id="联系方式">联系方式</h2>
+<ul>
+<li>Email: <a href="mailto:xxx@xxx.com">xxx@xxx.com</a></li>
+<li>GitHub: <a href="https://github.com/xxx">我的GitHub</a></li>
+</ul>
+<h2 id="个人兴趣">个人兴趣</h2>
+<ul>
+<li>xxx</li>
+<li>xxx</li>
+</ul>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        <li>
+        
+        </li>
+        <li>
+        
+        </li>
+    </ul>
+</section>
+  
+    
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'momo';
+            var disqus_button = document.getElementById("show-comments");
+
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
+            disqus_button.style.display = "";
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <ul>
+            <li>
+                <h6>
+                    Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+                    <a href="http://localhost:1313/index.xml">Subscribe </a></h6>
+            </li>
+            
+            
+        </ul>
+    </footer>
+</div>
+<script src="http://localhost:1313/js/scripts.js"></script>
+
+  
+
+
+</body>
+
+</html>
+

@@ -3,6 +3,7 @@ baseurl = "https://hwb96.github.io/"
 title = "Han Wenbo"
 canonifyurls = true
 theme = "hugo-kiera"
+disqusShortname = "momo"
 
 # 分页设置
 [pagination]
@@ -34,9 +35,9 @@ pygmentsCodeFences = true  # 启用代码高亮
 
     # 自定义 CSS 文件路径（注意：这里只写路径）
     customCSS = ["/css/custom.css"]  # 指向你的自定义 CSS 文件
-
+    mathjax = true
     homepageLength = 10  # 主页显示的文章数量
-
+    CommentAutoload = true
     # 添加 Google 中文字体
     google_fonts = [
         "Playfair Display:400,700",
@@ -46,11 +47,11 @@ pygmentsCodeFences = true  # 启用代码高亮
 
     #disableDarkModeCSS = false  # 是否禁用暗黑模式 CSS
 
-#  [[menu.main]]
-#    identifier = "tags"
-#    name = "Tags"
-#    url = "/tags"
-#    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    weight = 1000
 #
 #  [[menu.main]]
 #    identifier = "categories"

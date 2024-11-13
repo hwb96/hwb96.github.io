@@ -4,7 +4,7 @@ hugo server -D
 ```
 # 创建新的文章
 ```commandline
-hugo server -D
+hugo new posts/xx.md
 ```
 # 在新的电脑上克隆项目的两种方式
 

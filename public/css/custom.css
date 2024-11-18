@@ -66,6 +66,7 @@ h4 {
 
 /* 调整阅读时间和内容之间的间距 */
 .read-time {
+    display: none; /* 完全隐藏阅读时间 */
     font-family: "Georgia", serif;
     font-size: 0.9em;
     color: #666;
@@ -73,15 +74,15 @@ h4 {
     margin: 0;  /* 移除垂直边距 */
     padding: 0; /* 移除内边距 */
     display: inline-block;
-    margin-right: 3em;
+    margin-right: 1em;
 }
 
 /* 调整文章内容的上边距 */
-.post-content {
+body #main .post-content {
     font-family: "Georgia", "PT Serif", serif;
     font-size: 1em;
     color: #326891;
-    margin-top: 0.8em;  /* 减小上边距 */
+    margin-top: 0 !important;  /* 减小上边距 */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -89,6 +90,7 @@ h4 {
     text-underline-offset: 2px;
     transition: all 0.2s ease;
 }
+
 
 /* 日期样式也需要调整以保持一致性 */
 .post-date {
@@ -101,7 +103,16 @@ h4 {
     display: inline-block;
     margin-right: 3em;
 }
-
+/* 针对featured_image的间距 */
+.featured_image {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* 针对阅读时间 */
+div.one-minute-read,
+div[class*="minute-read"] {
+  display: none !important;
+}
 /* 链接样式 */
 a {
     color: #1b4f72;
@@ -127,9 +138,13 @@ a:hover {
     text-decoration: none;
 }
 /* 已访问的链接样式 */
-.post-content a:visited {
-    color: #5c2a9d; /* 紫色，表示已访问 */
+
+
+/* 如果上面不起作用，可以尝试 */
+body main section article .post-meta {
+  margin: 0 !important;
 }
+
 /* 引用块样式 */
 blockquote {
     font-family: "Georgia", "PT Serif", serif;
@@ -140,14 +155,34 @@ blockquote {
     color: #555;
     line-height: 1.6;
 }
+div.featured_image {
+  margin-bottom: 0 !important;
+}
 
+li.one-minute-read {
+  display: none !important;
+}
 /* 代码块样式 */
 pre, code {
     font-family: "Consolas", "Monaco", monospace;
     font-size: 0.9em;
     line-height: 1.4;
 }
-
+/* 或更具体的选择器 */
+#container main sectionHome ul li aside {
+  display: none !important;
+}
+aside > ul > li:last-child {
+  display: none !important;
+}
+/* 隐藏空白的featured_image div */
+/* 隐藏空白featured_image */
+div.featured_image {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 /* 列表样式 */
 ul, ol {
     font-family: "Georgia", "PT Serif", serif;

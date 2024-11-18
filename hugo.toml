@@ -29,15 +29,15 @@ pygmentsCodeFences = true  # 启用代码高亮
     #devto = "username"
 
 [params]
-    tagline = "Focus on technology, current social media trends,  and their intertwined politics."
-    #description = "Kiera: A Hugo theme for creative and technical writing."
+    tagline = "Focus on technology, trends, and their intertwined politics."
+#    description = "Kiera: A Hugo theme for creative and technical writing."
     #images = [""] # 用于 opengraph/twitter cards
 
     # 自定义 CSS 文件路径（注意：这里只写路径）
     customCSS = ["css/custom.css"]  # 指向你的自定义 CSS 文件
     mathjax = true
     homepageLength = 10  # 主页显示的文章数量
-    CommentAutoload = true
+    CommentAutoload = false
     # 添加 Google 中文字体
     google_fonts = [
         "Playfair Display:400,700",

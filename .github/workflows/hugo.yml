@@ -1,11 +1,69 @@
-# 备选方案：使用不同的部署策略
-- name: Deploy
-  run: |
-    git config --global user.name "GitHub Actions"
-    git config --global user.email "github-actions@users.noreply.github.com"
-    git checkout --orphan gh-pages
-    git reset --hard
-    cp -r public/* .
-    git add .
-    git commit -m "Deploy to GitHub Pages"
-    git push origin gh-pages --force
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches:
+      - master  # 这里使用 master 而不是 main
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 允许一个并发部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# 默认为 bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # 构建工作
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.120.4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://hwb96.github.io/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  # 部署工作
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

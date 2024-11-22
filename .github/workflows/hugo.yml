@@ -40,6 +40,12 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
+      # 添加工作目录检查
+      - name: Check working directory
+        run: |
+          pwd
+          ls -la
+
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
@@ -49,11 +55,41 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+          
+          echo "Content of current directory after build:"
+          ls -la
+          
+          echo "Content of public directory:"
+          ls -la public/
+
+      # 确保 public 目录存在且有内容
+      - name: Verify public directory
+        run: |
+          if [ ! -d "public" ]; then
+            echo "Error: public directory does not exist!"
+            exit 1
+          fi
+          
+          if [ -z "$(ls -A public/)" ]; then
+            echo "Error: public directory is empty!"
+            exit 1
+          fi
+          
+          echo "Public directory exists and contains files:"
+          ls -la public/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+
+      # 验证上传是否成功
+      - name: List artifacts
+        run: |
+          echo "Checking artifacts..."
+          ls -la "$RUNNER_TEMP"
+          echo "GitHub workspace:"
+          ls -la $GITHUB_WORKSPACE
 
   deploy:
     environment:

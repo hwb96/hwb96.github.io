@@ -72,7 +72,18 @@ h3 {
 h4 {
     font-size: 0.8em;
 }
+/* 隐藏评论按钮 */
+.comments-block,
+#show-comments,
+.fa.fa-comments {
+    display: none !important;
+}
 
+/* 如果上面的规则不够具体，可以尝试这个更具体的选择器 */
+button#show-comments,
+.button#show-comment {
+    display: none !important;
+}
 /* 调整阅读时间和内容之间的间距 */
 .read-time {
     display: none; /* 完全隐藏阅读时间 */

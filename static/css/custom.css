@@ -32,7 +32,7 @@ header h1 a {
     color: #000000 !important;
     font-size: 1em;
     font-weight: 900;
-    text-decoration: none;ddd
+    text-decoration: none;
     letter-spacing: 0px;
 }
 
@@ -101,14 +101,14 @@ body #main .post-content {
 }
 
 
-/* 日期样式也需要调整以保持一致性 */
+/* 日期样式也需要调整以保持一致性，注意这个段落能解决日期和正文之间间距过大的问题。 */
 .post-date {
     font-family: "Georgia", serif;
     font-size: 0.9em;
     color: #666;
     font-style: italic;
-    margin: 0.1;  /* 移除垂直边距 */
-    padding: 0。1; /* 移除内边距 */
+    /*margin: 1em;  !* 移除垂直边距 *!*/
+    /*padding: -1em; !* 移除内边距 *!*/
     display: inline-block;
     margin-right: 3em;
 }
@@ -220,26 +220,10 @@ ul, ol {
 .read-more:hover {
     color: #264c6f;
 }
-/* 移除header中的social media */
-#container header ul#social-media {
-   display: none;
-}
+/*!* 移除header中的social media *!*/
+/*#container header ul#social-media {*/
+/*   display: none;*/
+/*}*/
 
-/* 在footer中添加social media */
-#container footer ul {
-   margin: 1em 0;
-   padding: 0;
-   list-style: none;
-   display: flex;
-   justify-content: center;
-   gap: 1em;
-}
 
-#container footer ul li a {
-   color: #666666;
-   text-decoration: none;
-}
 
-#container footer ul li a:hover {
-   color: #000000;
-}

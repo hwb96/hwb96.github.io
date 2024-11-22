@@ -15,15 +15,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.120.4
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,6 +36,10 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
@@ -50,13 +48,12 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "https://hwb96.github.io/"
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-          name: github-pages
 
   deploy:
     environment:
@@ -68,5 +65,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
-        with:
-          artifact_name: github-pages

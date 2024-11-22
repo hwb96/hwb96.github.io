@@ -3,27 +3,23 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches:
-      - master  # 这里使用 master 而不是 main
+      - master
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 允许一个并发部署
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# 默认为 bash
 defaults:
   run:
     shell: bash
 
 jobs:
-  # 构建工作
   build:
     runs-on: ubuntu-latest
     env:
@@ -34,6 +30,11 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -52,11 +53,11 @@ jobs:
             --baseURL "https://hwb96.github.io/"
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4  # 从 v2 改为 v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+          name: github-pages
 
-  # 部署工作
   deploy:
     environment:
       name: github-pages
@@ -66,4 +67,6 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4  # 从 v2 改为 v4
+        uses: actions/deploy-pages@v3
+        with:
+          artifact_name: github-pages

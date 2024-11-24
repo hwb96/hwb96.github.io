@@ -8,9 +8,9 @@ draft = false
 +++
 A Tale of Two Cities: Contrasting Perspectives on Russia and Europe from High-Level Forums in Vladivostok and Berlin：Insights from a Prominent Chinese Think Tank Director on Global Power Dynamics.
 
-*By Zhai Dongsheng*
+*By Di Dongsheng*
 <!--more-->
-Zhai Dongsheng is a prominent Chinese think tank scholar and currently serves as the Vice Dean of the School of International Relations at Renmin University of China. His research and insights provide valuable strategic analysis for policymaking.
+Di Dongsheng is a prominent Chinese think tank scholar and currently serves as the Vice Dean of the School of International Relations at Renmin University of China. His research and insights provide valuable strategic analysis for policymaking.
 
 Original link: https://mp.weixin.qq.com/s/2GNHocadeqaOGMjdSkQc6A
 

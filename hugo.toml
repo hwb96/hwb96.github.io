@@ -3,7 +3,7 @@ baseurl = "https://hwb96.github.io/"
 title = "Han Wenbo"
 canonifyurls = true
 theme = "hugo-kiera"
-disqusShortname = "momo"
+#disqusShortname = "momo"
 
 # 分页设置
 [pagination]

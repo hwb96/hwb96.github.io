@@ -6,7 +6,9 @@ tags = []
 categories = []
 draft = false
 +++
-我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好。后来同事告诉我应该试一试YAML ，网上流出来的例如V0的提示词等等都是使用这个格式。受同事的影响我后来也频繁使用YAML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的。
+我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好,而且直到现在[GPT官方示例](https://platform.openai.com/docs/guides/prompt-generation)也是这样做的。
+
+后来看到[宝玉](https://x.com/dotey)分享的[V0提示词](https://baoyu.io/blog/v0-system-prompt-2024)，我的直觉告诉我应该试一试XML ，因为我用的提示词生成工具（[dify](https://docs.dify.ai/zh-hans)一个内置功能）都是使用这个格式。后来我也频繁使用XML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的，因为它给了我使用JSON格式尝试的可能，可惜的是没有XML格式的对比。
 <!--more-->
 介绍下Does Prompt Formatting Have Any Impact on LLM Performance这篇论文，是由微软和MIT发表的。 结论是提示的格式对基于GPT的模型性能有显著影响，不同格式的效果在不同任务中表现不一致，没有一个格式在所有任务中都是最优的。
 ## 实验设计
@@ -231,3 +233,7 @@ User: {
 
 1. [Does Prompt Formatting Have Any Impact on LLM Performance? | Cool Papers - Immersive Paper Discovery](https://papers.cool/arxiv/2411.10541)
 2. [[2411.10541\] Does Prompt Formatting Have Any Impact on LLM Performance?](https://arxiv.org/abs/2411.10541)
+3. https://baoyu.io/blog/v0-system-prompt-2024
+4. https://x.com/dotey
+5. https://platform.openai.com/docs/guides/prompt-generation
+6. https://docs.dify.ai/zh-hans

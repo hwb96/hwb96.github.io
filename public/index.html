@@ -96,7 +96,7 @@
     
 
     <li class="first" >
-      <h1><a href="http://localhost:1313/posts/20250102-prompt-formatting-impact-on-llm-performance/" title="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证</a></h1>
+      <h1><a href="http://localhost:1313/posts/20250101-prompt-formatting-impact-on-llm-performance/" title="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证</a></h1>
       <aside>
     <ul>
         <li>
@@ -113,15 +113,16 @@
 
       
 <div class="featured_image">
-    <a href="http://localhost:1313/posts/20250102-prompt-formatting-impact-on-llm-performance/" title="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">
+    <a href="http://localhost:1313/posts/20250101-prompt-formatting-impact-on-llm-performance/" title="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">
         <img src="">
     </a>
 </div>
 
 
-      <p><p>哪种提示词样式对模型的输出是最佳的？介绍下Does Prompt Formatting Have Any Impact on LLM Performance这篇论文，是由微软和MIT发表的。 结论是提示的格式对基于GPT的模型性能有显著影响，不同格式的效果在不同任务中表现不一致，没有一个格式在所有任务中都是最优的。</p></p>
+      <p><p>我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好,而且直到现在<a href="https://platform.openai.com/docs/guides/prompt-generation">GPT官方示例</a>也是这样做的。</p>
+<p>后来看到<a href="https://x.com/dotey">宝玉</a>分享的<a href="https://baoyu.io/blog/v0-system-prompt-2024">V0提示词</a>，我的直觉告诉我应该试一试XML ，因为我用的提示词生成工具（<a href="https://docs.dify.ai/zh-hans">dify</a>一个内置功能）都是使用这个格式。后来我也频繁使用XML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的，因为它给了我使用JSON格式尝试的可能，可惜的是没有XML格式的对比。</p></p>
       
-      <a href="http://localhost:1313/posts/20250102-prompt-formatting-impact-on-llm-performance/">Read more…</a>
+      <a href="http://localhost:1313/posts/20250101-prompt-formatting-impact-on-llm-performance/">Read more…</a>
       
     </li>
     
@@ -150,7 +151,7 @@
 </div>
 
 
-      <p><p>以下内容包含两个实验,尝试了以下5种few-shot少样本技术。在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter上看到的一个<a href="https://x.com/clusteredbytes/status/1846251848593822051">印度人</a>使用llamaindex的<a href="https://x.com/llama_index/status/1846351135596335165">动态提示词</a>系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在<a href="https://blog.langchain.dev/few-shot-prompting-to-improve-tool-calling-performance/">LangChain</a>的官方博客发现了一篇总结得非常好的文章，我一直拖到今天才下定决心写一个翻译稿件。</p></p>
+      <p><p>在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter<a href="https://x.com/clusteredbytes/status/1846251848593822051">Rohan</a>的推文使用llamaindex搭建的<a href="https://x.com/llama_index/status/1846351135596335165">动态提示词</a>系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在<a href="https://blog.langchain.dev/few-shot-prompting-to-improve-tool-calling-performance/">LangChain</a>的官方博客发现了一篇总结得非常好的文章，我一直拖到今天元旦终于闲下来才下定决心写一个翻译稿件。</p></p>
       
       <a href="http://localhost:1313/posts/20250101-introduction-to-few-shot-learning-best-practices/">Read more…</a>
       
@@ -181,7 +182,9 @@
 </div>
 
 
-      <p></p>
+      <p><p>契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。 我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。 使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。</p></p>
+      
+      <a href="http://localhost:1313/posts/20241111-claude-artifact-system-explained/">Read more…</a>
       
     </li>
     

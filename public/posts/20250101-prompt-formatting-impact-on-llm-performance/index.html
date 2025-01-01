@@ -7,10 +7,11 @@
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="The HTML5 Herald" />
-<meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/posts/20250102-prompt-formatting-impact-on-llm-performance/">
+<meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/posts/20250101-prompt-formatting-impact-on-llm-performance/">
   <meta property="og:site_name" content="Han Wenbo">
   <meta property="og:title" content="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">
-  <meta property="og:description" content="我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好。后来同事告诉我应该试一试YAML ，网上流出来的例如V0的提示词等等都是使用这个格式。受同事的影响我后来也频繁使用YAML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的。">
+  <meta property="og:description" content="我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好,而且直到现在GPT官方示例也是这样做的。
+后来看到宝玉分享的V0提示词，我的直觉告诉我应该试一试XML ，因为我用的提示词生成工具（dify一个内置功能）都是使用这个格式。后来我也频繁使用XML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的，因为它给了我使用JSON格式尝试的可能，可惜的是没有XML格式的对比。">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -20,7 +21,8 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">
-  <meta name="twitter:description" content="我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好。后来同事告诉我应该试一试YAML ，网上流出来的例如V0的提示词等等都是使用这个格式。受同事的影响我后来也频繁使用YAML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的。">
+  <meta name="twitter:description" content="我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好,而且直到现在GPT官方示例也是这样做的。
+后来看到宝玉分享的V0提示词，我的直觉告诉我应该试一试XML ，因为我用的提示词生成工具（dify一个内置功能）都是使用这个格式。后来我也频繁使用XML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的，因为它给了我使用JSON格式尝试的可能，可惜的是没有XML格式的对比。">
 
 <meta name="generator" content="Hugo 0.138.0">
     
@@ -118,7 +120,7 @@
     
       
 <div class="featured_image">
-    <a href="http://localhost:1313/posts/20250102-prompt-formatting-impact-on-llm-performance/" title="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">
+    <a href="http://localhost:1313/posts/20250101-prompt-formatting-impact-on-llm-performance/" title="纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证">
         <img src="">
     </a>
 </div>
@@ -126,7 +128,8 @@
 
     
 
-    <p>我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好。后来同事告诉我应该试一试YAML ，网上流出来的例如V0的提示词等等都是使用这个格式。受同事的影响我后来也频繁使用YAML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的。</p>
+    <p>我之前的项目实践总是把所有的提示词都设计成Markdown格式，因为我认为这样不仅对大模型友好，对我使用Typora编辑特别长的提示词也十分友好,而且直到现在<a href="https://platform.openai.com/docs/guides/prompt-generation">GPT官方示例</a>也是这样做的。</p>
+<p>后来看到<a href="https://x.com/dotey">宝玉</a>分享的<a href="https://baoyu.io/blog/v0-system-prompt-2024">V0提示词</a>，我的直觉告诉我应该试一试XML ，因为我用的提示词生成工具（<a href="https://docs.dify.ai/zh-hans">dify</a>一个内置功能）都是使用这个格式。后来我也频繁使用XML格式，但是到底哪个更好呢？我觉得这篇实证论文挺有参考意义的，因为它给了我使用JSON格式尝试的可能，可惜的是没有XML格式的对比。</p>
 <p>介绍下Does Prompt Formatting Have Any Impact on LLM Performance这篇论文，是由微软和MIT发表的。 结论是提示的格式对基于GPT的模型性能有显著影响，不同格式的效果在不同任务中表现不一致，没有一个格式在所有任务中都是最优的。</p>
 <h2 id="实验设计">实验设计</h2>
 <ul>
@@ -570,6 +573,10 @@
 <ol>
 <li><a href="https://papers.cool/arxiv/2411.10541">Does Prompt Formatting Have Any Impact on LLM Performance? | Cool Papers - Immersive Paper Discovery</a></li>
 <li>[<a href="https://arxiv.org/abs/2411.10541">2411.10541] Does Prompt Formatting Have Any Impact on LLM Performance?</a></li>
+<li><a href="https://baoyu.io/blog/v0-system-prompt-2024">https://baoyu.io/blog/v0-system-prompt-2024</a></li>
+<li><a href="https://x.com/dotey">https://x.com/dotey</a></li>
+<li><a href="https://platform.openai.com/docs/guides/prompt-generation">https://platform.openai.com/docs/guides/prompt-generation</a></li>
+<li><a href="https://docs.dify.ai/zh-hans">https://docs.dify.ai/zh-hans</a></li>
 </ol>
 
 </article>

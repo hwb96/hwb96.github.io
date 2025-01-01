@@ -6,16 +6,10 @@ tags = []
 categories = []
 draft = false
 +++
+契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。 我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。 使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。
 <!--more-->
-## 
 
 ## 背景
-
-契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。
-
-我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。
-
-使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。
 
 ![image-20241112180139653](/images/20241111-claude-artifact-system-explained.assets/image-20241112180139653.png)
 

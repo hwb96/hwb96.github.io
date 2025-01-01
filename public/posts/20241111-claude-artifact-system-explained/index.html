@@ -10,6 +10,7 @@
 <meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/posts/20241111-claude-artifact-system-explained/">
   <meta property="og:site_name" content="Han Wenbo">
   <meta property="og:title" content="Claude Artifacts原理探究">
+  <meta property="og:description" content="契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。 我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。 使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -19,6 +20,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Claude Artifacts原理探究">
+  <meta name="twitter:description" content="契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。 我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。 使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。">
 
 <meta name="generator" content="Hugo 0.138.0">
     
@@ -124,11 +126,8 @@
 
     
 
-    <h2 id="heading"></h2>
+    <p>契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。 我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。 使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。</p>
 <h2 id="背景">背景</h2>
-<p>契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。</p>
-<p>我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。</p>
-<p>使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。</p>
 <p><img src="http://localhost:1313/images/20241111-claude-artifact-system-explained.assets/image-20241112180139653.png" alt="image-20241112180139653"></p>
 <h2 id="探究">探究</h2>
 <p>lobechat在9月份支持了这个Artifact<a href="https://github.com/lobehub/lobe-chat/pull/3985">新特性</a>。在lobechat的 <a href="https://github.com/forever-lwy/lobe-chat/blob/c18f0cc9fa0e7a2f265c263cb08d0b58b9b49ec8/src/tools/artifacts/systemRole.ts">GitHub</a>找到了系统提示词，这是官方<a href="https://github.com/lobehub/lobe-chat-agents/blob/fbafc2054d55d5c8921f1ae81e86d95a1d7eb09a/src/minimal-artifact-architect.json#L4">GitHub</a>的代码部分。</p>

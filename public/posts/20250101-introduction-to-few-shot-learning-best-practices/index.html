@@ -10,7 +10,7 @@
 <meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/posts/20250101-introduction-to-few-shot-learning-best-practices/">
   <meta property="og:site_name" content="Han Wenbo">
   <meta property="og:title" content="few-shot 最佳实践指南">
-  <meta property="og:description" content="以下内容包含两个实验,尝试了以下5种few-shot少样本技术。在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter上看到的一个印度人使用llamaindex的动态提示词系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在LangChain的官方博客发现了一篇总结得非常好的文章，我一直拖到今天才下定决心写一个翻译稿件。">
+  <meta property="og:description" content="在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitterRohan的推文使用llamaindex搭建的动态提示词系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在LangChain的官方博客发现了一篇总结得非常好的文章，我一直拖到今天元旦终于闲下来才下定决心写一个翻译稿件。">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="few-shot 最佳实践指南">
-  <meta name="twitter:description" content="以下内容包含两个实验,尝试了以下5种few-shot少样本技术。在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter上看到的一个印度人使用llamaindex的动态提示词系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在LangChain的官方博客发现了一篇总结得非常好的文章，我一直拖到今天才下定决心写一个翻译稿件。">
+  <meta name="twitter:description" content="在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitterRohan的推文使用llamaindex搭建的动态提示词系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在LangChain的官方博客发现了一篇总结得非常好的文章，我一直拖到今天元旦终于闲下来才下定决心写一个翻译稿件。">
 
 <meta name="generator" content="Hugo 0.138.0">
     
@@ -126,7 +126,8 @@
 
     
 
-    <p>以下内容包含两个实验,尝试了以下5种few-shot少样本技术。在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter上看到的一个<a href="https://x.com/clusteredbytes/status/1846251848593822051">印度人</a>使用llamaindex的<a href="https://x.com/llama_index/status/1846351135596335165">动态提示词</a>系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在<a href="https://blog.langchain.dev/few-shot-prompting-to-improve-tool-calling-performance/">LangChain</a>的官方博客发现了一篇总结得非常好的文章，我一直拖到今天才下定决心写一个翻译稿件。</p>
+    <p>在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter<a href="https://x.com/clusteredbytes/status/1846251848593822051">Rohan</a>的推文使用llamaindex搭建的<a href="https://x.com/llama_index/status/1846351135596335165">动态提示词</a>系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在<a href="https://blog.langchain.dev/few-shot-prompting-to-improve-tool-calling-performance/">LangChain</a>的官方博客发现了一篇总结得非常好的文章，我一直拖到今天元旦终于闲下来才下定决心写一个翻译稿件。</p>
+<p>以下内容包含两个实验,尝试了以下5种few-shot少样本技术。</p>
 <h2 id="对比实验1介绍">对比实验1介绍</h2>
 <p>尝试了以下5种少样本技术（按预期它们的表现递增排序）：</p>
 <h3 id="zero-shot">zero-shot</h3>
@@ -305,7 +306,7 @@
         </li>
         <li>
         
-            <a href="http://localhost:1313/posts/20250102-prompt-formatting-impact-on-llm-performance/">纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证 <i class="fa fa-chevron-circle-right"></i> </a>
+            <a href="http://localhost:1313/posts/20250101-prompt-formatting-impact-on-llm-performance/">纯文本、Markdown、YAML和JSON四种提示词样式对模型输出的影响实证 <i class="fa fa-chevron-circle-right"></i> </a>
         
         </li>
     </ul>

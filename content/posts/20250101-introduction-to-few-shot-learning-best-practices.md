@@ -6,9 +6,9 @@ tags = []
 categories = []
 draft = false
 +++
-以下内容包含两个实验,尝试了以下5种few-shot少样本技术。在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter上看到的一个[印度人](https://x.com/clusteredbytes/status/1846251848593822051)使用llamaindex的[动态提示词](https://x.com/llama_index/status/1846351135596335165)系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在[LangChain](https://blog.langchain.dev/few-shot-prompting-to-improve-tool-calling-performance/)的官方博客发现了一篇总结得非常好的文章，我一直拖到今天才下定决心写一个翻译稿件。
+在过去的几个月里，我总是习惯于把Few-shot放在系统提示词里。但是我经过使用LangGraph，Dify和其他平台的一些实践，我慢慢地发现，放在QA问答对的几个shot，总是会比放在系统提示词里效果会更好。后来我又开始借鉴在twitter[Rohan](https://x.com/clusteredbytes/status/1846251848593822051)的推文使用llamaindex搭建的[动态提示词](https://x.com/llama_index/status/1846351135596335165)系统。这并不是熟能生巧，这方面的论文和Medium的文章给了我很大启发，然后我在[LangChain](https://blog.langchain.dev/few-shot-prompting-to-improve-tool-calling-performance/)的官方博客发现了一篇总结得非常好的文章，我一直拖到今天元旦终于闲下来才下定决心写一个翻译稿件。
 <!--more-->
-
+以下内容包含两个实验,尝试了以下5种few-shot少样本技术。
 ## 对比实验1介绍
 
 尝试了以下5种少样本技术（按预期它们的表现递增排序）：

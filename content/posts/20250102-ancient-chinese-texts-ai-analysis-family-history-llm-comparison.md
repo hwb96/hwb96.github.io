@@ -29,9 +29,9 @@ Gemini 最好，通义千问是接下来的佼佼者。 其他Claude-3.5-Sonnet�
 
 ## 家谱的前两页
 
-![image-20250102215212354](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215212354.png)
+![image-20250102215212354](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215212354.png)
 
-![image-20250102215224414](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215224414.png)
+![image-20250102215224414](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215224414.png)
 
 ## 内容提取
 
@@ -39,6 +39,7 @@ Gemini 最好，通义千问是接下来的佼佼者。 其他Claude-3.5-Sonnet�
 
 ### 序章
 
+```text
 賜姓，胙土，命氏，子孫世守其家數千年不忘其所自始太史公之著史記也
 
 公侯傳國 名曰世家 亦其遺意也 魏晉以降九品之中正之法行
@@ -60,6 +61,9 @@ Gemini 最好，通义千问是接下来的佼佼者。 其他Claude-3.5-Sonnet�
 始祖温，字师孔，号平野，原籍山西洪洞人。明初奉旨迁密，兄弟三人：长温、次和、三节。相传播迁时，家有铁斧，分而为三，各持其一以为识。次迁鄢陵，三迁温县，今皆为望族，各有谱牒。长迁于平陌村，遂家马是为在密县之始祖懿行難以枚举殁葬于村之西北原配盧氏生三子。
 
 长仲兴，次仲良，三仲诚。
+```
+
+
 
 ### 现代译文
 
@@ -105,9 +109,9 @@ Gemini 最好，通义千问是接下来的佼佼者。 其他Claude-3.5-Sonnet�
 
 ### Gemini
 
-![image-20250102221200529](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102221200529.png)
+![image-20250102221200529](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102221200529.png)
 
-![image-20250102221526187](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102221526187.png)
+![image-20250102221526187](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102221526187.png)
 
 它还能解释里边的古文给你，特别是里边的专有名词，我觉得其他模型在这方面和他差一大截：
 
@@ -167,9 +171,9 @@ Let me know if you have any other questions about this fascinating piece of hist
 
 ### 通义千问
 
-![image-20250102220154149](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220154149.png)
+![image-20250102220154149](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220154149.png)
 
-![image-20250102215950208](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215950208.png)
+![image-20250102215950208](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215950208.png)
 
 
 
@@ -179,42 +183,42 @@ Let me know if you have any other questions about this fascinating piece of hist
 
 错误挺多的：
 
-![image-20250102223643321](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102223643321.png)
+![image-20250102223643321](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102223643321.png)
 
-![image-20250102223706102](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102223706102.png)
+![image-20250102223706102](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102223706102.png)
 
 ### gpt-4o
 
-![image-20250102224538875](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102224538875.png)
+![image-20250102224538875](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102224538875.png)
 
-![image-20250102225025030](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102225025030.png)
+![image-20250102225025030](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102225025030.png)
 
 ### kimi
 
-![image-20250102220219825](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220219825.png)
+![image-20250102220219825](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220219825.png)
 
-![image-20250102215937349](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215937349.png)
+![image-20250102215937349](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102215937349.png)
 
 
 
 ### deepseek v3
 
-![image-20250102220441384](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220441384.png)
+![image-20250102220441384](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220441384.png)
 
-![image-20250102220411581](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220411581.png)
+![image-20250102220411581](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220411581.png)
 
 
 
 ### GLM
 
-![image-20250102220103435](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220103435.png)
+![image-20250102220103435](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220103435.png)
 
-![image-20250102220131835](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220131835.png)
+![image-20250102220131835](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220131835.png)
 
 ### 豆包
 
-![image-20250102220014522](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220014522.png)
+![image-20250102220014522](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220014522.png)
 
-![image-20250102220004165](images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220004165.png)
+![image-20250102220004165](/images/20250102-ancient-chinese-texts-ai-analysis.assets/image-20250102220004165.png)
 
 

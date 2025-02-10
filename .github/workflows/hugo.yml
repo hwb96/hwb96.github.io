@@ -44,8 +44,9 @@ jobs:
             --minify \
             --baseURL "https://hwb96.github.io/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4  # Updated to v4
+        uses: actions/upload-artifact@v4  # Updated to v4
         with:
+          name: pages
           path: ./public
   # 部署工作
   deploy:

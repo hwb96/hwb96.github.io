@@ -2,18 +2,22 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches:
-      - master  # 使用 master 而不是 main
+      - master  # 这里使用 master 而不是 main
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
+
 defaults:
   run:
     shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,7 +30,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
@@ -40,10 +44,10 @@ jobs:
             --minify \
             --baseURL "https://hwb96.github.io/"
       - name: Upload artifact
-        uses: actions/upload-artifact@v4  # Use upload-artifact@v4 directly
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: pages
           path: ./public
+
   deploy:
     environment:
       name: github-pages
@@ -53,4 +57,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,284 @@
+<!doctype html>
+
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析 - Han Wenbo</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/posts/20250210-vllm-tp-pp-parallelism-explained/">
+  <meta property="og:site_name" content="Han Wenbo">
+  <meta property="og:title" content="vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析">
+  <meta property="og:description" content="今天看到有人用vLLM 0.7.1部署r1，TP size 8，PP size 2，忽然想到平时都是用TP，基本上没有用PP，也看到科学空间群里的有人调研使用的命令。然后在公众号，知乎查到的关于TP和PP的说法很多都是错误的，使用perplexity.ai才在reddit和个人网站搜到一些有用的资料，备份复习重温一下吧。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-10T18:43:28+08:00">
+    <meta property="article:modified_time" content="2025-02-10T18:43:28+08:00">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析">
+  <meta name="twitter:description" content="今天看到有人用vLLM 0.7.1部署r1，TP size 8，PP size 2，忽然想到平时都是用TP，基本上没有用PP，也看到科学空间群里的有人调研使用的命令。然后在公众号，知乎查到的关于TP和PP的说法很多都是错误的，使用perplexity.ai才在reddit和个人网站搜到一些有用的资料，备份复习重温一下吧。">
+
+<meta name="generator" content="Hugo 0.138.0">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="http://localhost:1313/js/mathjax-config.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+
+  <link rel="stylesheet" href="http://localhost:1313/css/normalize.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/fontawesome/css/all.min.css" />
+  
+    
+    <link href="//fonts.googleapis.com/css?family=Playfair Display:400,700|PT Serif:400,700|Merriweather:400,700" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.css" /><link rel='stylesheet' href='http://localhost:1313/css/custom.css'>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      
+      <h1>
+        <a href="http://localhost:1313/">Han Wenbo</a>
+      </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/hwb96" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/realhanwenbo" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>Focus on technology, trends, and their intertwined politics.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="active" href="http://localhost:1313/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://localhost:1313/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://localhost:1313/about/about-me/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2025-02-10T18:43:28&#43;08:00">Feb 10, 2025</time>
+        </li>
+        
+        
+
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+      
+<div class="featured_image">
+    <a href="http://localhost:1313/posts/20250210-vllm-tp-pp-parallelism-explained/" title="vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析">
+        <img src="">
+    </a>
+</div>
+
+
+    
+
+    <p>今天看到有人用vLLM 0.7.1部署r1，TP size 8，PP size 2，忽然想到平时都是用TP，基本上没有用PP，也看到科学空间群里的有人调研使用的命令。然后在公众号，知乎查到的关于TP和PP的说法很多都是错误的，使用perplexity.ai才在reddit和个人网站搜到一些有用的资料，备份复习重温一下吧。</p>
+<p><img src="http://localhost:1313/images/20250210-vllm-tp-pp-parallelism-explained/image-20250210182840768.png" alt="image-20250210182840768"></p>
+<hr>
+<p><img src="http://localhost:1313/images/20250210-vllm-tp-pp-parallelism-explained/image-20250210183228905.png" alt="image-20250210183228905"></p>
+<hr>
+<p>本文介绍两种tp和pp并行技术——**张量并行（Tensor Parallelism, TP）<strong>和</strong>流水线并行（Pipeline Parallelism, PP）**的实现原理与应用场景。</p>
+<h2 id="一理解张量并行tp">一、理解张量并行（TP）</h2>
+<p>当单个GPU内存不足以承载整个模型时，<strong>张量并行</strong>通过将模型分片部署在多个GPU上协同工作。这种方法通过对张量运算进行分解，实现了横向扩展能力。</p>
+<h3 id="关键技术点">关键技术点</h3>
+<ol>
+<li>
+<p><strong>分片检查点优化</strong>
+使用官方提供的<a href="https://docs.vllm.ai/en/latest/getting_started/examples/save_sharded_state.html">分片转换脚本</a>可以将传统模型检查点转换为分片格式。虽然初始转换耗时较长，但后续加载时间可缩短80%以上。</p>
+</li>
+<li>
+<p><strong>动态资源配置</strong></p>
+<pre tabindex="0"><code>1# 单节点8卡配置示例
+2tensor_parallel_size = 8
+3pipeline_parallel_size = 1
+4
+5# 两节点各8卡的配置
+6tensor_parallel_size = 8  # 每节点GPU数量
+7pipeline_parallel_size = 2  # 总节点数
+</code></pre></li>
+<li>
+<p><strong>性能预估指标</strong>
+vLLM运行时输出的GPU blocks: 790指标反映显存利用率，每个块可处理16个token。实际吞吐量可通过公式换算：</p>
+<pre tabindex="0"><code>最大处理token数 = GPU块数 × 16
+</code></pre></li>
+</ol>
+<hr>
+<h2 id="二实施流水线并行pp">二、实施流水线并行（PP）</h2>
+<p>当模型规模突破单节点容量时，<strong>流水线并行</strong>通过纵向分层的方式，将模型的不同stage部署在不同计算节点上。这种架构类似于工厂的装配流水线，各节点接力完成计算任务。</p>
+<h3 id="实施步骤要点">实施步骤要点</h3>
+<ol>
+<li>
+<p>层级切分策略</p>
+<ul>
+<li>按模型层（Layer）进行分段</li>
+<li>确保每段可在节点内完成TP部署</li>
+<li>考虑层间通信带宽需求</li>
+</ul>
+</li>
+<li>
+<p>典型配置示例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">1#</span> <span style="color:#e6db74">跨两节点部署配置</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">2pipeline_parallel_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">2  # 节点总数</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">3tensor_parallel_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">8   # 每节点GPU数</span>
+</span></span></code></pre></div></li>
+<li>
+<p>性能平衡技巧</p>
+<ul>
+<li><strong>微流水线（Micro-batching）</strong>：通过批处理优化利用率</li>
+<li><strong>气泡控制</strong>：协调各stage计算时间差</li>
+<li><strong>梯度累积</strong>：平衡显存与吞吐量需求</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="三技术选型指南">三、技术选型指南</h2>
+<p>两种技术的核心区别在于资源调度维度：</p>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>张量并行(TP)</th>
+          <th>流水线并行(PP)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>资源分配维度</td>
+          <td>单节点内GPU间协同</td>
+          <td>跨节点协同</td>
+      </tr>
+      <tr>
+          <td>通信频率</td>
+          <td>高频（逐层通信）</td>
+          <td>低频（阶段边界通信）</td>
+      </tr>
+      <tr>
+          <td>最佳适用场景</td>
+          <td>百亿级参数模型</td>
+          <td>千亿级参数超大模型</td>
+      </tr>
+      <tr>
+          <td>典型硬件配置</td>
+          <td>8卡A100节点</td>
+          <td>多台8卡A100服务器集群</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>组合策略建议</strong>：对于超大模型训练，推荐采用混合并行方案——在节点内使用TP进行细粒度并行，节点间使用PP实现粗粒度扩展。例如使用16台配备8卡A100的服务器时，可以配置为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">1TP_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">8   # 单节点全卡参与</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">2PP_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">16  # 跨16个节点</span>
+</span></span></code></pre></div><h2 id="参考资料">参考资料</h2>
+<ol>
+<li>
+<p><a href="https://www.restack.io/p/vllm-answer-tensor-parallelism-vs-pipeline-parallelism-cat-ai">Vllm Tensor Parallelism Vs Pipeline Parallelism | Restackio</a></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/21064432691">vLLM 0.7.1 DeepSeek R1 PP 部署踩坑指南 - 知乎</a></p>
+</li>
+<li>
+<p><a href="https://www.perplexity.ai/search/what-is-the-difference-between-7_RgadGDQq._p4mjqSDszg">https://www.perplexity.ai/search/what-is-the-difference-between-7_RgadGDQq._p4mjqSDszg</a></p>
+</li>
+</ol>
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        <li>
+        
+            <a href="http://localhost:1313/posts/20250110-multi-knapsack-nutrition/"><i class="fa fa-chevron-circle-left"></i> 用多重背包算法解决大模型长距离依赖和数字约束遗忘问题</a>
+        
+        </li>
+        <li>
+        
+        </li>
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <ul>
+            <li>
+                <h6>
+                    Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+                    <a href="http://localhost:1313/index.xml">Subscribe </a></h6>
+            </li>
+            
+            
+        </ul>
+    </footer>
+</div>
+<script src="http://localhost:1313/js/scripts.js"></script>
+
+  
+
+
+</body>
+
+</html>
+

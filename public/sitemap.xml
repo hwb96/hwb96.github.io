@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-02-10T18:43:28+08:00</lastmod>
+    <lastmod>2025-02-11T15:24:39+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-02-10T18:43:28+08:00</lastmod>
+    <lastmod>2025-02-11T15:24:39+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/20250210-deepseek-r1-chat-template-change-analysis/</loc>
+    <lastmod>2025-02-11T15:24:39+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/20250210-vllm-tp-pp-parallelism-explained/</loc>
     <lastmod>2025-02-10T18:43:28+08:00</lastmod>

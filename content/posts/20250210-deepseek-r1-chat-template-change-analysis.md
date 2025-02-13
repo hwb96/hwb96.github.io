@@ -6,7 +6,7 @@ tags = []
 categories = []
 draft = false
 +++
-DeepSeek-R1-系列开源模型文件 `tokenizer_config.json` 的 `chat_template` 对应的 [Jinja 模板](https://jinja.palletsprojects.com/en/stable/) 发生了改变。具体来说，原来的 `{'<｜Assistant｜>'}}{% endif %}` 变成了 `{'<｜Assistant｜><think>\\n'}}{% endif %}`。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 `</think>`，而没有 `<think>`，也就是说 `<think>` 标签现在位于提示词中，而不是生成的内容中。
+DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 [Jinja 模板](https://jinja.palletsprojects.com/en/stable/) 发生了改变。具体来说，原来的 {'<｜Assistant｜>'}}{% endif %} 变成了 `{'<｜Assistant｜><think>\\n'}}{% endif %}`。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 `</think>`，而没有 <think>，也就是说 <think> 标签现在位于提示词中，而不是生成的内容中。
 <!--more-->
 ---
 ## 原始的：
@@ -104,7 +104,7 @@ DeepSeek-R1-系列开源模型文件 `tokenizer_config.json` 的 `chat_template`
 
 可以将 chat_template 中的 `<think>\\n` 去掉，也就是：
 
-```
+```python
 template = tokenizer.chat_template
 template = template.replace("<think>\\n", "")  # 去掉末尾的 <think>\\n
 tokenizer.chat_template = template  # 设置新的模板
@@ -112,22 +112,23 @@ tokenizer.chat_template = template  # 设置新的模板
 
 但是[官方的说法](https://huggingface.co/deepseek-ai/DeepSeek-R1/commit/f7361cd9ff99396dbf6bd644ad846015e59ed4fc)是：
 
-```properties
+
 Additionally, we have observed that the DeepSeek-R1 series models tend to bypass thinking pattern (i.e., outputting <think>\n\n</think>) when responding to certain queries, which can adversely affect the model's performance. To ensure that the model engages in thorough reasoning, we recommend enforcing the model to initiate its response with <think>\n at the beginning of every output.
+
 此外，我们观察到 DeepSeek-R1 系列模型在回答某些查询时往往会绕过思考模式（即输出 <think>\n\n</think> ），这可能会对模型性能产生不利影响。为确保模型进行彻底推理，我们建议强制模型在每个输出的开头以 <think>\n 开始其响应。
-```
+
 
 ## 解决方案2
 
-如果不方便修改 `deepseek_r1_reasoning_parser.py`，可以在 vllm serve 命令中指定 chat template。
+如果不方便修改 deepseek_r1_reasoning_parser.py，可以在 vllm serve 命令中指定 chat template。
 
-具体而言，首先需要创建一个 `template_deepseek_r1.jinja` 文件，写入 chat template：
+具体而言，首先需要创建一个 template_deepseek_r1.jinja 文件，写入 chat template：
 
 *上述 template 是官方模型仓库中更新前的 template*
 
-之后在 vllm serve 命令中指定该 template 即可（`--chat-template ./template_deepseek_r1.jinja`）：
+之后在 vllm serve 命令中指定该 template 即可（--chat-template ./template_deepseek_r1.jinja）：
 
-```
+```bash
 vllm serve deepseek-ai/DeepSeek-R1-Distill-Llama-70B \
   --tensor-parallel-size 4 \
   --max-model-len 32768 \

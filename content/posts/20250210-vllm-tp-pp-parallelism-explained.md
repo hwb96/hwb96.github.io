@@ -30,7 +30,7 @@ draft = false
 
 2. **动态资源配置**
 
-   ```
+   ```properties
    1# 单节点8卡配置示例
    2tensor_parallel_size = 8
    3pipeline_parallel_size = 1

@@ -10,7 +10,7 @@
 <meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/posts/20250210-deepseek-r1-chat-template-change-analysis/">
   <meta property="og:site_name" content="Han Wenbo">
   <meta property="og:title" content="R1 系列模型 Chat Template 变更分析与下游解决方案">
-  <meta property="og:description" content="DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 Jinja 模板 发生了改变。具体来说，原来的 {&#39;&lt;｜Assistant｜&gt;&#39;}}{% endif %} 变成了 {&#39;&lt;｜Assistant｜&gt;&lt;think&gt;\\n&#39;}}{% endif %}。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 &lt;/think&gt;，而没有 &lt;think&gt;，也就是说 &lt;think&gt; 标签现在位于提示词中，而不是生成的内容中。">
+  <meta property="og:description" content="DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 Jinja 模板 发生了改变。具体来说，原来的 {’&lt;｜Assistant｜&gt;’}}{% endif %} 变成了 {&#39;&lt;｜Assistant｜&gt;&lt;think&gt;\\n&#39;}}{% endif %}。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 &lt;/think&gt;，而没有 ，也就是说 标签现在位于提示词中，而不是生成的内容中。">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="R1 系列模型 Chat Template 变更分析与下游解决方案">
-  <meta name="twitter:description" content="DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 Jinja 模板 发生了改变。具体来说，原来的 {&#39;&lt;｜Assistant｜&gt;&#39;}}{% endif %} 变成了 {&#39;&lt;｜Assistant｜&gt;&lt;think&gt;\\n&#39;}}{% endif %}。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 &lt;/think&gt;，而没有 &lt;think&gt;，也就是说 &lt;think&gt; 标签现在位于提示词中，而不是生成的内容中。">
+  <meta name="twitter:description" content="DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 Jinja 模板 发生了改变。具体来说，原来的 {’&lt;｜Assistant｜&gt;’}}{% endif %} 变成了 {&#39;&lt;｜Assistant｜&gt;&lt;think&gt;\\n&#39;}}{% endif %}。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 &lt;/think&gt;，而没有 ，也就是说 标签现在位于提示词中，而不是生成的内容中。">
 
 <meta name="generator" content="Hugo 0.138.0">
     
@@ -126,7 +126,7 @@
 
     
 
-    <p>DeepSeek-R1-系列开源模型文件 <code>tokenizer_config.json</code> 的 <code>chat_template</code> 对应的 <a href="https://jinja.palletsprojects.com/en/stable/">Jinja 模板</a> 发生了改变。具体来说，原来的 <code>{'&lt;｜Assistant｜&gt;'}}{% endif %}</code> 变成了 <code>{'&lt;｜Assistant｜&gt;&lt;think&gt;\\n'}}{% endif %}</code>。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 <code>&lt;/think&gt;</code>，而没有 <code>&lt;think&gt;</code>，也就是说 <code>&lt;think&gt;</code> 标签现在位于提示词中，而不是生成的内容中。</p>
+    <p>DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 <a href="https://jinja.palletsprojects.com/en/stable/">Jinja 模板</a> 发生了改变。具体来说，原来的 {&rsquo;&lt;｜Assistant｜&gt;&rsquo;}}{% endif %} 变成了 <code>{'&lt;｜Assistant｜&gt;&lt;think&gt;\\n'}}{% endif %}</code>。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 <code>&lt;/think&gt;</code>，而没有 <!-- raw HTML omitted -->，也就是说 <!-- raw HTML omitted --> 标签现在位于提示词中，而不是生成的内容中。</p>
 <hr>
 <h2 id="原始的">原始的：</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
@@ -211,25 +211,25 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="解决方案1">解决方案1</h2>
 <p>可以将 chat_template 中的 <code>&lt;think&gt;\\n</code> 去掉，也就是：</p>
-<pre tabindex="0"><code>template = tokenizer.chat_template
-template = template.replace(&#34;&lt;think&gt;\\n&#34;, &#34;&#34;)  # 去掉末尾的 &lt;think&gt;\\n
-tokenizer.chat_template = template  # 设置新的模板
-</code></pre><p>但是<a href="https://huggingface.co/deepseek-ai/DeepSeek-R1/commit/f7361cd9ff99396dbf6bd644ad846015e59ed4fc">官方的说法</a>是：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">Additionally,</span> <span style="color:#e6db74">we have observed that the DeepSeek-R1 series models tend to bypass thinking pattern (i.e., outputting &lt;think&gt;\n\n&lt;/think&gt;) when responding to certain queries, which can adversely affect the model&#39;s performance. To ensure that the model engages in thorough reasoning, we recommend enforcing the model to initiate its response with &lt;think&gt;\n at the beginning of every output.</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">此外，我们观察到</span> <span style="color:#e6db74">DeepSeek-R1 系列模型在回答某些查询时往往会绕过思考模式（即输出 &lt;think&gt;\n\n&lt;/think&gt; ），这可能会对模型性能产生不利影响。为确保模型进行彻底推理，我们建议强制模型在每个输出的开头以 &lt;think&gt;\n 开始其响应。</span>
-</span></span></code></pre></div><h2 id="解决方案2">解决方案2</h2>
-<p>如果不方便修改 <code>deepseek_r1_reasoning_parser.py</code>，可以在 vllm serve 命令中指定 chat template。</p>
-<p>具体而言，首先需要创建一个 <code>template_deepseek_r1.jinja</code> 文件，写入 chat template：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>template <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>chat_template
+</span></span><span style="display:flex;"><span>template <span style="color:#f92672">=</span> template<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;&lt;think&gt;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">n&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)  <span style="color:#75715e"># 去掉末尾的 &lt;think&gt;\\n</span>
+</span></span><span style="display:flex;"><span>tokenizer<span style="color:#f92672">.</span>chat_template <span style="color:#f92672">=</span> template  <span style="color:#75715e"># 设置新的模板</span>
+</span></span></code></pre></div><p>但是<a href="https://huggingface.co/deepseek-ai/DeepSeek-R1/commit/f7361cd9ff99396dbf6bd644ad846015e59ed4fc">官方的说法</a>是：</p>
+<p>Additionally, we have observed that the DeepSeek-R1 series models tend to bypass thinking pattern (i.e., outputting <!-- raw HTML omitted -->\n\n<!-- raw HTML omitted -->) when responding to certain queries, which can adversely affect the model&rsquo;s performance. To ensure that the model engages in thorough reasoning, we recommend enforcing the model to initiate its response with <!-- raw HTML omitted -->\n at the beginning of every output.</p>
+<p>此外，我们观察到 DeepSeek-R1 系列模型在回答某些查询时往往会绕过思考模式（即输出 <!-- raw HTML omitted -->\n\n<!-- raw HTML omitted --> ），这可能会对模型性能产生不利影响。为确保模型进行彻底推理，我们建议强制模型在每个输出的开头以 <!-- raw HTML omitted -->\n 开始其响应。</p>
+<h2 id="解决方案2">解决方案2</h2>
+<p>如果不方便修改 deepseek_r1_reasoning_parser.py，可以在 vllm serve 命令中指定 chat template。</p>
+<p>具体而言，首先需要创建一个 template_deepseek_r1.jinja 文件，写入 chat template：</p>
 <p><em>上述 template 是官方模型仓库中更新前的 template</em></p>
-<p>之后在 vllm serve 命令中指定该 template 即可（<code>--chat-template ./template_deepseek_r1.jinja</code>）：</p>
-<pre tabindex="0"><code>vllm serve deepseek-ai/DeepSeek-R1-Distill-Llama-70B \
-  --tensor-parallel-size 4 \
-  --max-model-len 32768 \
-  --enforce-eager \
-  --enable-reasoning \
-  --reasoning-parser deepseek_r1 \
-  --chat-template ./template_deepseek_r1.jinja
-</code></pre><h2 id="解决方案3">解决方案3</h2>
+<p>之后在 vllm serve 命令中指定该 template 即可（&ndash;chat-template ./template_deepseek_r1.jinja）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vllm serve deepseek-ai/DeepSeek-R1-Distill-Llama-70B <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --tensor-parallel-size <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --max-model-len <span style="color:#ae81ff">32768</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --enforce-eager <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --enable-reasoning <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --reasoning-parser deepseek_r1 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --chat-template ./template_deepseek_r1.jinja
+</span></span></code></pre></div><h2 id="解决方案3">解决方案3</h2>
 <p>最简单的解决方法是，直接看<a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B/commit/3865e12a1eb7cbd641ab3f9dfc28c588c6b0c1e9">代码差异</a>，修改下模型的文件，重新加载模型就可以了。</p>
 <p>参考资料</p>
 <p><a href="https://github.com/deepseek-ai/DeepSeek-R1/issues/352">本地部署DeepSeek-R1-Distill-Qwen-32B,输出仅有，没有 · Issue #352 · deepseek-ai/DeepSeek-R1</a></p>

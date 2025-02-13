@@ -142,14 +142,14 @@
 </li>
 <li>
 <p><strong>动态资源配置</strong></p>
-<pre tabindex="0"><code>1# 单节点8卡配置示例
-2tensor_parallel_size = 8
-3pipeline_parallel_size = 1
-4
-5# 两节点各8卡的配置
-6tensor_parallel_size = 8  # 每节点GPU数量
-7pipeline_parallel_size = 2  # 总节点数
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">1#</span> <span style="color:#e6db74">单节点8卡配置示例</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">2tensor_parallel_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">3pipeline_parallel_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">5#</span> <span style="color:#e6db74">两节点各8卡的配置</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">6tensor_parallel_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">8  # 每节点GPU数量</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">7pipeline_parallel_size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">2  # 总节点数</span>
+</span></span></code></pre></div></li>
 <li>
 <p><strong>性能预估指标</strong>
 vLLM运行时输出的GPU blocks: 790指标反映显存利用率，每个块可处理16个token。实际吞吐量可通过公式换算：</p>

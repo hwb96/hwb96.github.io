@@ -119,7 +119,7 @@
 </div>
 
 
-      <p><p>DeepSeek-R1-系列开源模型文件 <code>tokenizer_config.json</code> 的 <code>chat_template</code> 对应的 <a href="https://jinja.palletsprojects.com/en/stable/">Jinja 模板</a> 发生了改变。具体来说，原来的 <code>{'&lt;｜Assistant｜&gt;'}}{% endif %}</code> 变成了 <code>{'&lt;｜Assistant｜&gt;&lt;think&gt;\\n'}}{% endif %}</code>。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 <code>&lt;/think&gt;</code>，而没有 <code>&lt;think&gt;</code>，也就是说 <code>&lt;think&gt;</code> 标签现在位于提示词中，而不是生成的内容中。</p></p>
+      <p><p>DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 <a href="https://jinja.palletsprojects.com/en/stable/">Jinja 模板</a> 发生了改变。具体来说，原来的 {&rsquo;&lt;｜Assistant｜&gt;&rsquo;}}{% endif %} 变成了 <code>{'&lt;｜Assistant｜&gt;&lt;think&gt;\\n'}}{% endif %}</code>。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 <code>&lt;/think&gt;</code>，而没有 <!-- raw HTML omitted -->，也就是说 <!-- raw HTML omitted --> 标签现在位于提示词中，而不是生成的内容中。</p></p>
       
       <a href="http://localhost:1313/posts/20250210-deepseek-r1-chat-template-change-analysis/">Read more…</a>
       

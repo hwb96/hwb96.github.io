@@ -172,10 +172,12 @@ li.one-minute-read {
   display: none !important;
 }
 /* 代码块样式 */
-pre, code {
-    font-family: "Consolas", "Monaco", monospace;
-    font-size: 0.9em;
-    line-height: 1.4;
+pre code {
+    background-color: #f8f8f2; /* Dark background */
+    color: #f8f8f2; /* Light text */
+    padding: 15px; /* Add padding */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1.1em; /* Increase font size */
 }
 /* 或更具体的选择器 */
 #container main sectionHome ul li aside {

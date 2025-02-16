@@ -9,9 +9,13 @@ draft = false
 在RewardBench中，分了Seq. Classifier，Custom Classifiers，DPO，Random，Generative5种类型的奖励模型，我比较知道的是Sequence Classifiers 和Generative，今天也主要记录这两者。
 <!--more-->
 ---
+
+update:重新阅读了下R1的论文，好像没有用到过程奖励模型(PRM)，以下是原文：
+
+*We do not apply the outcome or process neural reward model in developing DeepSeek-R1-Zero, because we find that the neural reward model may suffer from reward hacking in the large-scale reinforcement learning process, and retraining the reward model needs additional training resources and it complicates the whole training pipeline.*
 ## 奖励模型
 
-在[RewardBench](https://huggingface.co/spaces/allenai/reward-bench)中，分了5种类型的奖励模型，我比较知道的是**Sequence Classifiers** 和**Generative**，今天也主要记录这两者。**DPO**只是之前制作偏好数据集进行DPO训练，而不是利用DPO训练一个奖励模型，这点还是稍微有点陌生了。
+在[RewardBench](https://huggingface.co/spaces/allenai/reward-bench)中，分了5种类型的奖励模型。**DPO**只是之前制作偏好数据集进行DPO训练，而不是利用DPO训练一个奖励模型，这点还是稍微有点陌生了。
 
 ![img](https://xtuner.readthedocs.io/zh-cn/latest/_images/preference_data.png)
 

@@ -15,7 +15,7 @@ update:重新阅读了下R1的论文，好像没有用到过程奖励模型(PRM)
 *We do not apply the outcome or process neural reward model in developing DeepSeek-R1-Zero, because we find that the neural reward model may suffer from reward hacking in the large-scale reinforcement learning process, and retraining the reward model needs additional training resources and it complicates the whole training pipeline.*
 ## 奖励模型
 
-在[RewardBench](https://huggingface.co/spaces/allenai/reward-bench)中，分了5种类型的奖励模型。**DPO**只是之前制作偏好数据集进行DPO训练，而不是利用DPO训练一个奖励模型，这点还是稍微有点陌生了。
+**DPO**我之前只是之前制作偏好数据集进行DPO训练的程度，而不是利用DPO训练一个奖励模型。
 
 ![img](https://xtuner.readthedocs.io/zh-cn/latest/_images/preference_data.png)
 

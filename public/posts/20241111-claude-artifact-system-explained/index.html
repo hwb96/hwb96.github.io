@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Claude Artifacts原理探究">
   <meta name="twitter:description" content="契机是我想测试下claude-3-5-sonnet-20240620的Artifacts功能。 我想在本地通过cURL功能请求，但是我发现使用同样的claude-3-5-sonnet-20240620模型，同样的一个问题“帮我画一个marmaid图表示bert模型架构”，如果我本地调用api输入token只有几十，输出无论如何也无法触发Artifact。 使用lobechat的话输入token有4000多，输出也能触发Artifact，那么肯定是系统提示词System prompt的缘故。">
 
-<meta name="generator" content="Hugo 0.138.0">
+<meta name="generator" content="Hugo 0.148.2">
     
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="http://localhost:1313/js/mathjax-config.js" defer></script>
@@ -140,7 +140,7 @@
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 400 600&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">defs</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt;
-</span></span><span style="display:flex;"><span>      @import <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;amp;display=swap&#39;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>      @import <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght</span>@400<span style="color:#e6db74">;700&amp;amp;display=swap&#39;</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">background</span> { fill: #f0f0f0; }
 </span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">title</span> { <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Noto Serif SC&#39;</span>, <span style="color:#66d9ef">serif</span>; <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">28</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">700</span>; fill: #333; }
 </span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">content</span> { <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Noto Serif SC&#39;</span>, <span style="color:#66d9ef">serif</span>; <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">18</span><span style="color:#66d9ef">px</span>; fill: #555; }
@@ -476,7 +476,7 @@
 </span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">CardHeader</span>&gt;{title}&lt;/<span style="color:#f92672">CardHeader</span>&gt;
 </span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">CardContent</span>&gt;
 </span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-2xl font-bold&#34;</span>&gt;{value}&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">{`text-sm</span> <span style="color:#960050;background-color:#1e0010">${</span><span style="color:#a6e22e">change</span> &gt;= 0 ? &#39;text-green-500&#39; : &#39;text-red-500&#39;}`}&gt;
+</span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">{</span><span style="color:#e6db74">`text-sm ${change &gt;= 0 ? &#39;text-green-500&#39; : &#39;text-red-500&#39;}`</span><span style="color:#e6db74">}</span>&gt;
 </span></span><span style="display:flex;"><span>       {change &gt;= 0 ? &#39;↑&#39; : &#39;↓&#39;} {Math.abs(change)}%
 </span></span><span style="display:flex;"><span>     &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>   &lt;/<span style="color:#f92672">CardContent</span>&gt;
@@ -505,7 +505,7 @@
 </span></span><span style="display:flex;"><span>       &lt;<span style="color:#f92672">BarChart</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">=</span><span style="color:#e6db74">{data}</span> <span style="color:#a6e22e">margin</span><span style="color:#f92672">=</span><span style="color:#e6db74">{{</span> <span style="color:#a6e22e">top:</span> <span style="color:#a6e22e">20</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">right:</span> <span style="color:#a6e22e">30</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">left:</span> <span style="color:#a6e22e">20</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">bottom:</span> <span style="color:#a6e22e">5</span> <span style="color:#960050;background-color:#1e0010">}}</span>&gt;
 </span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">XAxis</span> <span style="color:#a6e22e">dataKey</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;month&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">YAxis</span> /&gt;
-</span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">Bar</span> <span style="color:#a6e22e">dataKey</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;revenue&#34;</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#8884d8&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">Bar</span> <span style="color:#a6e22e">dataKey</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;revenue&#34;</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>#8884d8<span style="color:#e6db74">&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>       &lt;/<span style="color:#f92672">BarChart</span>&gt;
 </span></span><span style="display:flex;"><span>     &lt;/<span style="color:#f92672">ResponsiveContainer</span>&gt;
 </span></span><span style="display:flex;"><span>   &lt;/<span style="color:#f92672">div</span>&gt;

@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="R1 系列模型 Chat Template 变更分析与下游解决方案">
   <meta name="twitter:description" content="DeepSeek-R1-系列开源模型文件 tokenizer_config.json 的 chat_template 对应的 Jinja 模板 发生了改变。具体来说，原来的 {’&lt;｜Assistant｜&gt;’}}{% endif %} 变成了 {&#39;&lt;｜Assistant｜&gt;&lt;think&gt;\\n&#39;}}{% endif %}。造成的结果是，本地部署 DeepSeek-R1-系列模型时，输出仅有 &lt;/think&gt;，而没有 ，也就是说 标签现在位于提示词中，而不是生成的内容中。">
 
-<meta name="generator" content="Hugo 0.138.0">
+<meta name="generator" content="Hugo 0.148.2">
     
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="http://localhost:1313/js/mathjax-config.js" defer></script>

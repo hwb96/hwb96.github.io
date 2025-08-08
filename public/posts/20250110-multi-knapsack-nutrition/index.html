@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="用多重背包算法解决大模型长距离依赖和数字约束遗忘问题">
   <meta name="twitter:description" content="最近在做医疗诊断&#43;食谱生成的一个项目，遇到了一个棘手难题：数值敏感度不足，长距离依赖和约束遗忘。 我们需要利用大模型根据患者病情自动生成个性化食谱，首先生成一日营养目标摄入总量，然后生成早餐，中餐，晚餐各个食材的设定目标，结果是各个食材营养摄入总和总是超过总量预设值。LLM虽能生成流畅食谱，却难以精确控制营养素摄入量，为解决此问题，我们提出将食谱生成转化为多重背包问题，利用动态规划算法，在满足每日营养目标（背包容量）的约束下，选择最优菜品组合（价值最大化）。通过检索和约束优化，替代LLM的直接生成。">
 
-<meta name="generator" content="Hugo 0.138.0">
+<meta name="generator" content="Hugo 0.148.2">
     
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="http://localhost:1313/js/mathjax-config.js" defer></script>

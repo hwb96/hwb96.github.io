@@ -2,12 +2,12 @@
 
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=57443&amp;path=livereload" data-no-instant defer></script>
   <title>vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析 - Han Wenbo</title>
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="The HTML5 Herald" />
-<meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:1313/posts/20250210-vllm-tp-pp-parallelism-explained/">
+<meta name="author" content="HanWenbo" /><meta property="og:url" content="http://localhost:57443/posts/20250210-vllm-tp-pp-parallelism-explained/">
   <meta property="og:site_name" content="Han Wenbo">
   <meta property="og:title" content="vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析">
   <meta property="og:description" content="今天看到有人用vLLM 0.7.1部署r1，TP size 8，PP size 2，忽然想到平时都是用TP，基本上没有用PP，也看到科学空间群里的有人调研使用的命令。然后在公众号，知乎查到的关于TP和PP的说法很多都是错误的，使用perplexity.ai才在reddit和个人网站搜到一些有用的资料，备份复习重温一下吧。">
@@ -25,17 +25,17 @@
 <meta name="generator" content="Hugo 0.148.2">
     
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="http://localhost:1313/js/mathjax-config.js" defer></script>
+    <script src="http://localhost:57443/js/mathjax-config.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 
-  <link rel="stylesheet" href="http://localhost:1313/css/normalize.min.css" />
-  <link rel="stylesheet" href="http://localhost:1313/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="http://localhost:57443/css/normalize.min.css" />
+  <link rel="stylesheet" href="http://localhost:57443/fontawesome/css/all.min.css" />
   
     
     <link href="//fonts.googleapis.com/css?family=Playfair Display:400,700|PT Serif:400,700|Merriweather:400,700" rel="stylesheet">
   
   
-  <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.css" /><link rel='stylesheet' href='http://localhost:1313/css/custom.css'>
+  <link rel="stylesheet" type="text/css" href="http://localhost:57443/css/styles.css" /><link rel='stylesheet' href='http://localhost:57443/css/custom.css'>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
     <header>
       
       <h1>
-        <a href="http://localhost:1313/">Han Wenbo</a>
+        <a href="http://localhost:57443/">Han Wenbo</a>
       </h1>
 
       <ul id="social-media">
@@ -68,19 +68,19 @@
     <ul>
         
         <li>
-            <a class="active" href="http://localhost:1313/posts/">
+            <a class="active" href="http://localhost:57443/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
         </li>
         
         <li>
-            <a class="" href="http://localhost:1313/tags">
+            <a class="" href="http://localhost:57443/tags">
                 <i class="fa-li fa  fa-lg"></i><span>Tags</span>
             </a>
         </li>
         
         <li>
-            <a class="" href="http://localhost:1313/about/about-me/">
+            <a class="" href="http://localhost:57443/about/about-me/">
                 <i class="fa-li fa  fa-lg"></i><span>About</span>
             </a>
         </li>
@@ -118,7 +118,7 @@
     
       
 <div class="featured_image">
-    <a href="http://localhost:1313/posts/20250210-vllm-tp-pp-parallelism-explained/" title="vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析">
+    <a href="http://localhost:57443/posts/20250210-vllm-tp-pp-parallelism-explained/" title="vLLM中的并行技术：张量并行(TP)与流水线并行(PP)解析">
         <img src="">
     </a>
 </div>
@@ -127,9 +127,9 @@
     
 
     <p>今天看到有人用vLLM 0.7.1部署r1，TP size 8，PP size 2，忽然想到平时都是用TP，基本上没有用PP，也看到科学空间群里的有人调研使用的命令。然后在公众号，知乎查到的关于TP和PP的说法很多都是错误的，使用perplexity.ai才在reddit和个人网站搜到一些有用的资料，备份复习重温一下吧。</p>
-<p><img src="http://localhost:1313/images/20250210-vllm-tp-pp-parallelism-explained/image-20250210182840768.png" alt="image-20250210182840768"></p>
+<p><img src="http://localhost:57443/images/20250210-vllm-tp-pp-parallelism-explained/image-20250210182840768.png" alt="image-20250210182840768"></p>
 <hr>
-<p><img src="http://localhost:1313/images/20250210-vllm-tp-pp-parallelism-explained/image-20250210183228905.png" alt="image-20250210183228905"></p>
+<p><img src="http://localhost:57443/images/20250210-vllm-tp-pp-parallelism-explained/image-20250210183228905.png" alt="image-20250210183228905"></p>
 <hr>
 <p>本文介绍两种tp和pp并行技术——**张量并行（Tensor Parallelism, TP）<strong>和</strong>流水线并行（Pipeline Parallelism, PP）**的实现原理与应用场景。</p>
 <h2 id="一理解张量并行tp">一、理解张量并行（TP）</h2>
@@ -243,12 +243,12 @@ vLLM运行时输出的GPU blocks: 790指标反映显存利用率，每个块可�
     <ul>
         <li>
         
-            <a href="http://localhost:1313/posts/20250110-multi-knapsack-nutrition/"><i class="fa fa-chevron-circle-left"></i> 用多重背包算法解决大模型长距离依赖和数字约束遗忘问题</a>
+            <a href="http://localhost:57443/posts/20250110-multi-knapsack-nutrition/"><i class="fa fa-chevron-circle-left"></i> 用多重背包算法解决大模型长距离依赖和数字约束遗忘问题</a>
         
         </li>
         <li>
         
-            <a href="http://localhost:1313/posts/20250210-deepseek-r1-chat-template-change-analysis/">R1 系列模型 Chat Template 变更分析与下游解决方案 <i class="fa fa-chevron-circle-right"></i> </a>
+            <a href="http://localhost:57443/posts/20250210-deepseek-r1-chat-template-change-analysis/">R1 系列模型 Chat Template 变更分析与下游解决方案 <i class="fa fa-chevron-circle-right"></i> </a>
         
         </li>
     </ul>
@@ -268,14 +268,14 @@ vLLM运行时输出的GPU blocks: 790指标反映显存利用率，每个块可�
             <li>
                 <h6>
                     Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-                    <a href="http://localhost:1313/index.xml">Subscribe </a></h6>
+                    <a href="http://localhost:57443/index.xml">Subscribe </a></h6>
             </li>
             
             
         </ul>
     </footer>
 </div>
-<script src="http://localhost:1313/js/scripts.js"></script>
+<script src="http://localhost:57443/js/scripts.js"></script>
 
   
 

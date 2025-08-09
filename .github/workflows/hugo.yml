@@ -2,7 +2,8 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches:
-      - master  # 这里使用 master 而不是 main
+      - master
+      - main  # 支持 main 分支
   workflow_dispatch:
 
 permissions:
@@ -43,6 +44,20 @@ jobs:
             --gc \
             --minify \
             --baseURL "https://hwb96.github.io/"
+      - name: Verify build output
+        run: |
+          echo "=== Build output verification ==="
+          ls -lah public/
+          echo "=== Checking for index.html ==="
+          if [ -f public/index.html ]; then
+            echo "✅ index.html found"
+            head -20 public/index.html
+          else
+            echo "❌ index.html NOT found"
+            exit 1
+          fi
+          echo "=== Checking for CSS files ==="
+          find public/css -name "*.css" 2>/dev/null || echo "No CSS files found"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

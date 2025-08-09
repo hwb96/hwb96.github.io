@@ -185,59 +185,59 @@
 <h2 id="实验">实验</h2>
 <h3 id="文本示例">文本示例</h3>
 <h4 id="plain-text">Plain text</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System:
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System:
 </span></span><span style="display:flex;"><span>You are a annotator working for large financial data company and are tasked with extracting named entities from financial documents who follows strict guidelines for quality and formatting. The following sentence is from a financial document. List the named entities in the order they appear in the sentence. If an entity appears multiple times, list it multiple times. Entities should be stated in the format NAME - TYPE where TYPE can be PERSON, ORGANIZATION, or LOCATION. State your final answer as a comma-separated list of entities enclosed in square brackets. Example: [BANK - ORGANIZATION, burrows - PERSON]. If there are no entities present, state your final answer as []. Provide your chain of thought first and then respond with your final answer. Here is an example: [ILL EXAMPLE INPUT] [ILL EXAMPLE SOLUTION]
 </span></span><span style="display:flex;"><span>User:
 </span></span><span style="display:flex;"><span>[EMPTY]
 </span></span></code></pre></div><h4 id="markdown">Markdown</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System:
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Persona
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> You are a annotator working for large financial data company are tasked with extracting named entities from financial documents who follows strict guidelines for quality and formatting.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System:
+</span></span><span style="display:flex;"><span>## Persona
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> You are a annotator working for large financial data company are tasked with extracting named entities from financial documents who follows strict guidelines for quality and formatting.
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Instructions
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> You will be given a sentence from a financial document.
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> List the named entities in the order they appear in the sentence.
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> If an entity appears multiple times, list it multiples times.
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Provide your chain of thought first and then respond with your final answer.
+</span></span><span style="display:flex;"><span>## Instructions
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> You will be given a sentence from a financial document.
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> List the named entities in the order they appear in the sentence.
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> If an entity appears multiple times, list it multiples times.
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> Provide your chain of thought first and then respond with your final answer.
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Output Format
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> Entities should be stated in the format NAME - TYPE where TYPE can be PERSON, ORGANIZATION, or LOCATION.
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> State your final answer as a comma-separated list of entities enclosed in square brackets. Example: [Bank - ORGANIZATION, Borrower - PERSON].
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> If there are no entities found, state your final answer as &#39;No entities found&#39;.
+</span></span><span style="display:flex;"><span>## Output Format
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> Entities should be stated in the format NAME - TYPE where TYPE can be PERSON, ORGANIZATION, or LOCATION.
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> State your final answer as a comma-separated list of entities enclosed in square brackets. Example: [Bank - ORGANIZATION, Borrower - PERSON].
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">-</span> If there are no entities found, state your final answer as &#39;No entities found&#39;.
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Example
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">### DOCUMENT
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{ICL EXAMPLE INPUT}
+</span></span><span style="display:flex;"><span>## Example
+</span></span><span style="display:flex;"><span>### DOCUMENT
+</span></span><span style="display:flex;"><span>{ICL EXAMPLE INPUT}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">### Solution
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{ICL EXAMPLE SOLUTION}
+</span></span><span style="display:flex;"><span>### Solution
+</span></span><span style="display:flex;"><span>{ICL EXAMPLE SOLUTION}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>User:
-</span></span><span style="display:flex;"><span><span style="color:#75715e">### DOCUMENT
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{INPUT}
+</span></span><span style="display:flex;"><span>### DOCUMENT
+</span></span><span style="display:flex;"><span>{INPUT}
 </span></span></code></pre></div><h4 id="yaml">YAML</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System:
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System:
 </span></span><span style="display:flex;"><span>Persona:
 </span></span><span style="display:flex;"><span>  Description: You are a annotator working for large financial data company are tasked with extracting named entities from financial documents who follows strict guidelines for quality and formatting.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Instructions:
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> You will be given a sentence from a financial document.
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> List the named entities in the order they appear in the sentence.
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> If an entity appears multiple times, list it multiples times.
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> Provide your chain of thought first and then respond with your final answer.
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">-</span> You will be given a sentence from a financial document.
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">-</span> List the named entities in the order they appear in the sentence.
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">-</span> If an entity appears multiple times, list it multiples times.
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">-</span> Provide your chain of thought first and then respond with your final answer.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Output_Format:
 </span></span><span style="display:flex;"><span>  Entities should be stated in the format NAME - TYPE where TYPE can be PERSON, ORGANIZATION, or LOCATION. State your final answer as a comma-separated list of entities enclosed in square brackets.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Examples:
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> Document: {ICL EXAMPLE INPUT}
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> Solution: {ICL EXAMPLE SOLUTION}
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">-</span> Document: {ICL EXAMPLE INPUT}
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">-</span> Solution: {ICL EXAMPLE SOLUTION}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>User:
 </span></span><span style="display:flex;"><span>Task:
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> Document: {INPUT}
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">-</span> Document: {INPUT}
 </span></span></code></pre></div><h4 id="json">JSON</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System: {
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>System: {
 </span></span><span style="display:flex;"><span>  &#34;Persona&#34;: &#34;You are a annotator working for large financial data company are tasked with extracting named entities from financial documents who follows strict guidelines for quality and formatting.&#34;,
 </span></span><span style="display:flex;"><span>  &#34;Instructions&#34;: [
 </span></span><span style="display:flex;"><span>    &#34;You will be given a sentence from a financial document.&#34;,

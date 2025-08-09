@@ -58,3 +58,11 @@ pygmentsCodeFences = true  # 启用代码高亮
 #    name = "Categories"
 #    url = "/categories"
 #    weight = 1
+
+# 语法高亮改为 GitHub 风格（Chroma），使用内联样式以确保主题不覆盖
+[markup]
+  [markup.highlight]
+    style = "github"
+    noClasses = true
+    guessSyntax = true
+    lineNos = false

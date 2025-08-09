@@ -145,46 +145,46 @@
 <p>训练出来的GRM至少可以做两件事，拿<a href="https://huggingface.co/Skywork/Skywork-Critic-Llama-3.1-70B"> Skywork-Critic-Llama-3.1-70B</a>举例：</p>
 <h4 id="用作偏好数据选择器">用作偏好数据选择器：</h4>
 <p>回答A和回答B选择更好的一个的prompt：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Please act as an impartial judge and evaluate the quality of the responses provided by two AI assistants to the user question displayed below. You should choose the assistant that follows the user</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">s instructions and answers the user</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">s question better. 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Your evaluation should consider factors such as the helpfulness, relevance, accuracy, depth, creativity, and level of detail of their responses. Avoid any position biases and ensure that the order in which the responses were presented does not influence your decision. Do not allow the length of the responses to influence your evaluation. Do not favor certain names of the assistants. Be as objective as possible. 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Please directly output your final verdict by strictly following this format: &#34;[[A]]&#34; if assistant A is better, &#34;[[B]]&#34; if assistant B is better.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[User Question]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">{input}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[The Start of Assistant A&#39;s Answer]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">{response_a}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[The End of Assistant A&#39;s Answer]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[The Start of Assistant B&#39;s Answer]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">{response_b}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[The End of Assistant B&#39;s Answer]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#0a3069">&#34;&#34;&#34;Please act as an impartial judge and evaluate the quality of the responses provided by two AI assistants to the user question displayed below. You should choose the assistant that follows the user</span><span style="color:#0a3069">\&#39;</span><span style="color:#0a3069">s instructions and answers the user</span><span style="color:#0a3069">\&#39;</span><span style="color:#0a3069">s question better. 
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">Your evaluation should consider factors such as the helpfulness, relevance, accuracy, depth, creativity, and level of detail of their responses. Avoid any position biases and ensure that the order in which the responses were presented does not influence your decision. Do not allow the length of the responses to influence your evaluation. Do not favor certain names of the assistants. Be as objective as possible. 
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">Please directly output your final verdict by strictly following this format: &#34;[[A]]&#34; if assistant A is better, &#34;[[B]]&#34; if assistant B is better.
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[User Question]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069"></span><span style="color:#0a3069">{input}</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[The Start of Assistant A&#39;s Answer]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069"></span><span style="color:#0a3069">{response_a}</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[The End of Assistant A&#39;s Answer]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[The Start of Assistant B&#39;s Answer]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069"></span><span style="color:#0a3069">{response_b}</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[The End of Assistant B&#39;s Answer]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">&#34;&#34;&#34;</span>
 </span></span></code></pre></div><h4 id="用作打分judge">用作打分Judge：</h4>
 <p>prompt：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> <span style="color:#e6db74">&#34;&#34;&#34;请扮演一个专业的对话质量评价专家，能够从多个维度诊断和分析 AI 助手对用户问题的回答，并进行总体打分（分值范围是 1-5）。你的评估应考虑回答的有用性、相关性、准确性、深度、创造性、安全性等众多维度，请注意，不同任务类型的指令对评估分析维度的侧重不一样，需要根据具体的问题进行分析。
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[用户问题]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">{input}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[助手回答的开始]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">{response_a}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[助手回答的结束]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">你的详细评估和总体打分为: &#34;&#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> <span style="color:#0a3069">&#34;&#34;&#34;请扮演一个专业的对话质量评价专家，能够从多个维度诊断和分析 AI 助手对用户问题的回答，并进行总体打分（分值范围是 1-5）。你的评估应考虑回答的有用性、相关性、准确性、深度、创造性、安全性等众多维度，请注意，不同任务类型的指令对评估分析维度的侧重不一样，需要根据具体的问题进行分析。
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[用户问题]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069"></span><span style="color:#0a3069">{input}</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[助手回答的开始]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069"></span><span style="color:#0a3069">{response_a}</span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">[助手回答的结束]
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">
+</span></span></span><span style="display:flex;"><span><span style="color:#0a3069">你的详细评估和总体打分为: &#34;&#34;&#34;</span>
 </span></span></code></pre></div><p>返回：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>**评估分析：**
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>**评估分析：**
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> <span style="font-weight:bold">**有用性**</span>：回答直接解决了用户的问题，提供了清晰的步骤和计算过程，非常有用。
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> <span style="font-weight:bold">**相关性**</span>：回答完全相关于用户的问题，没有偏离主题。
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> <span style="font-weight:bold">**准确性**</span>：计算过程准确无误，结果正确。
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> <span style="font-weight:bold">**深度**</span>：回答提供了详细的步骤和解释，帮助用户理解问题的解决过程。
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> <span style="font-weight:bold">**创造性**</span>：虽然回答是直接的计算过程，但在解释每一步时使用了简单的语言和明确的计算，使得回答易于理解。
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> <span style="font-weight:bold">**安全性**</span>：回答中没有包含任何可能引起误解或危险的信息。
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">1.</span> **有用性**：回答直接解决了用户的问题，提供了清晰的步骤和计算过程，非常有用。
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">2.</span> **相关性**：回答完全相关于用户的问题，没有偏离主题。
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">3.</span> **准确性**：计算过程准确无误，结果正确。
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">4.</span> **深度**：回答提供了详细的步骤和解释，帮助用户理解问题的解决过程。
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">5.</span> **创造性**：虽然回答是直接的计算过程，但在解释每一步时使用了简单的语言和明确的计算，使得回答易于理解。
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">6.</span> **安全性**：回答中没有包含任何可能引起误解或危险的信息。
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">**总体打分：5**</span>
+</span></span><span style="display:flex;"><span>**总体打分：5**
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">**总结**</span>：这个回答非常清晰、准确且有用，完全满足了用户的需求。它通过逐步解释和计算，帮助用户理解问题的解决过程。没有发现任何需要改进的地方，因此给予满分。
+</span></span><span style="display:flex;"><span>**总结**：这个回答非常清晰、准确且有用，完全满足了用户的需求。它通过逐步解释和计算，帮助用户理解问题的解决过程。没有发现任何需要改进的地方，因此给予满分。
 </span></span></code></pre></div><h2 id="基于规则的奖励系统">基于规则的奖励系统</h2>
 <p>这块就和奖励模型不同了，我能想到的：r1里的格式奖励，基于代码沙盒的运行结果准确性奖励。</p>
 <p>困惑度奖励，重复性奖励，长度奖励，中文字符奖励，&hellip;</p>

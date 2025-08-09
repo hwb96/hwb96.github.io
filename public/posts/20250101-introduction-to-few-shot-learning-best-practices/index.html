@@ -132,68 +132,68 @@
 <p>尝试了以下5种少样本技术（按预期它们的表现递增排序）：</p>
 <h3 id="zero-shot">zero-shot</h3>
 <p>仅向模型输入基本system prompt系统提示词和Question问题</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;system
-</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;system
+</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>REAL QUESTION: 请生成“太阳从西边升起”的相反句子。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>REAL ANSWER: 太阳从东边升起。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>REAL QUESTION: 请生成“太阳从西边升起”的相反句子。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>REAL ANSWER: 太阳从东边升起。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span></code></pre></div><h3 id="few-shot-static-msgs-k3">few-shot-static-msgs, k=3</h3>
 <p>三个固定的few-shot，在系统提示词和最终的问题之间。也就是这样的：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;system
-</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;system
+</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span># 示例 1
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>EXAMPLE 1: QUESTION: 我喜欢夏天。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>EXAMPLE 1: ANSWER: 我不喜欢夏天。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>EXAMPLE 1: QUESTION: 我喜欢夏天。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>EXAMPLE 1: ANSWER: 我不喜欢夏天。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span># 示例 2
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>EXAMPLE 2: QUESTION: 天空是蓝色的。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>EXAMPLE 2: ANSWER: 天空不是蓝色的。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>EXAMPLE 2: QUESTION: 天空是蓝色的。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>EXAMPLE 2: ANSWER: 天空不是蓝色的。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span># 示例 3
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>EXAMPLE 3: QUESTION: 我喜欢吃辣的食物。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>EXAMPLE 3: ANSWER: 我不喜欢吃辣的食物。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>EXAMPLE 3: QUESTION: 我喜欢吃辣的食物。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>EXAMPLE 3: ANSWER: 我不喜欢吃辣的食物。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>REAL QUESTION: 我喜欢猫。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>REAL QUESTION: 我喜欢猫。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
 </span></span></code></pre></div><h3 id="few-shot-dynamic-msgs-k3">few-shot-dynamic-msgs, k=3</h3>
 <p>三个动态的few-shot，在系统提示词和最终的问题之间。动态的few-shot可以通过与使用嵌入模型计算与问题的相关程度，向量数据库从向量库里召回3个最相关的问答对的方式来实现。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;system
-</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;system
+</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span># 动态示例 1
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 1: QUESTION: 今天下雨了。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 1: ANSWER: 今天没下雨。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 1: QUESTION: 今天下雨了。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 1: ANSWER: 今天没下雨。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span># 动态示例 2
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 2: QUESTION: 我喜欢甜的食物。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 2: ANSWER: 我不喜欢甜的食物。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 2: QUESTION: 我喜欢甜的食物。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 2: ANSWER: 我不喜欢甜的食物。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span># 动态示例 3
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 3: QUESTION: 秋天很凉爽。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 3: ANSWER: 秋天不凉爽。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 3: QUESTION: 秋天很凉爽。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>DYNAMIC EXAMPLE 3: ANSWER: 秋天不凉爽。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>REAL QUESTION: 冬天很冷。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>REAL QUESTION: 冬天很冷。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
 </span></span></code></pre></div><h3 id="few-shot-str-k13"><em>few-shot-str, k=13</em></h3>
 <p>将所有 13 个few-shot 组合为一个长字符串，并将其附加到系统提示中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;system
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;system
 </span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。
 </span></span><span style="display:flex;"><span>EXAMPLE 1: QUESTION: 我喜欢苹果。
 </span></span><span style="display:flex;"><span>EXAMPLE 1: ANSWER: 我不喜欢苹果。
@@ -201,37 +201,37 @@
 </span></span><span style="display:flex;"><span>EXAMPLE 2: ANSWER: 今天不是晴天。
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>EXAMPLE 13: QUESTION: 我喜欢阅读。
-</span></span><span style="display:flex;"><span>EXAMPLE 13: ANSWER: 我不喜欢阅读。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span>EXAMPLE 13: ANSWER: 我不喜欢阅读。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>REAL QUESTION: 你喜欢跑步吗？<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>REAL QUESTION: 你喜欢跑步吗？<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
 </span></span></code></pre></div><h3 id="few-shot-msgs-k13">few-shot-msgs, k=13</h3>
 <p>所有 13 个少样本示例都作为系统提示和人类问题之间的一条消息列表传入。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;system
-</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;system
+</span></span><span style="display:flex;"><span>任务：根据给定的句子，生成与其相反的句子。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span># 示例 1
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>EXAMPLE 1: QUESTION: 我喜欢夏天。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>EXAMPLE 1: ANSWER: 我不喜欢夏天。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>EXAMPLE 1: QUESTION: 我喜欢夏天。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>EXAMPLE 1: ANSWER: 我不喜欢夏天。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span># 示例 2
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>EXAMPLE 2: QUESTION: 天空是蓝色的。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>EXAMPLE 2: ANSWER: 天空不是蓝色的。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>EXAMPLE 2: QUESTION: 天空是蓝色的。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>EXAMPLE 2: ANSWER: 天空不是蓝色的。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span># 示例 13
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>EXAMPLE 13: QUESTION: 我喜欢跑步。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
-</span></span><span style="display:flex;"><span>EXAMPLE 13: ANSWER: 我不喜欢跑步。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>EXAMPLE 13: QUESTION: 我喜欢跑步。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span>EXAMPLE 13: ANSWER: 我不喜欢跑步。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;user
-</span></span><span style="display:flex;"><span>REAL QUESTION: 我喜欢猫。<span style="color:#960050;background-color:#1e0010">&lt;</span>|im_end|&gt;
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>|im_start|&gt;assistant
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;user
+</span></span><span style="display:flex;"><span>REAL QUESTION: 我喜欢猫。<span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_end|&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f6f8fa;background-color:#82071e">&lt;</span>|im_start|&gt;assistant
 </span></span></code></pre></div><h2 id="对比实验1结果">对比实验1结果</h2>
 <p><img src="https://blog.langchain.dev/content/images/2024/07/Screenshot-2024-07-24-at-9.06.56-AM.png" alt="img"></p>
 <p>结果按模型拆分：</p>

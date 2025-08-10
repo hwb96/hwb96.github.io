@@ -172,3 +172,7 @@ cython_debug/
 
 # VS Code
 .vscode/
+# 忽略构建产物
+public/
+.hugo_build.lock
+resources/

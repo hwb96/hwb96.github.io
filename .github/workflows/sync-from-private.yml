@@ -39,6 +39,7 @@ jobs:
           rsync -a --delete \
             --exclude ".git/" \
             --exclude ".github/workflows/" \
+            --exclude "src_repo/" \
             --exclude "_site/" \
             --exclude ".jekyll-cache/" \
             --exclude ".bundle/" \
@@ -56,4 +57,3 @@ jobs:
           else
             echo "No changes to sync."
           fi
-

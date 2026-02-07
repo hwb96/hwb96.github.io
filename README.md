@@ -1,46 +1,62 @@
-# 本地运行
-```commandline
-hugo server -D
+# hwb96.github.io
+
+个人主页源码，当前使用 **Jekyll（AcademicPages / Minimal Mistakes fork）** 构建，并通过 GitHub Pages 自动部署。
+
+## 本地预览（macOS）
+
+说明：macOS 自带的系统 Ruby 通常版本较老，建议使用 Homebrew 的 Ruby（本文以 `ruby@3.2` 为例）。
+
+1. 安装 Ruby
+
+```bash
+brew install ruby@3.2
 ```
-# 创建新的文章
-```commandline
-hugo new posts/xx.md
+
+2. 安装依赖
+
+```bash
+/opt/homebrew/opt/ruby@3.2/bin/bundle install
 ```
-# 在新的电脑上克隆项目的两种方式
 
-## 方式一克隆时直接包含子模块
+3. 启动开发服务器
 
-```# 克隆主仓库和所有子模块
-git clone --recursive https://github.com/hwb96/hwb96.github.io.git
+```bash
+/opt/homebrew/opt/ruby@3.2/bin/bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000
 ```
-## 方式二：先克隆主仓库，再更新子模块
 
-```# 克隆主仓库
-git clone https://github.com/hwb96/hwb96.github.io.git
+浏览器访问 `http://127.0.0.1:4000/`。
+
+如果端口占用，把 `--port 4000` 改成 `--port 4001`（或其它端口）。
+
+## 本地构建
+
+```bash
+/opt/homebrew/opt/ruby@3.2/bin/bundle exec jekyll build
 ```
-# 初始化和更新子模块
-```cd hwb96.github.io
-git submodule init
-git submodule update
+
+构建产物输出到 `_site/`。
+
+## 回归脚本（可选）
+
+```bash
+./scripts/test_blog_titles_only.sh
+./scripts/test_public_profile_privacy.sh
 ```
-子模块的更新：
 
+## 写文章
 
+在 `_posts/` 下新增 `YYYY-MM-DD-slug.md`，使用 YAML Front Matter，例如：
+
+```yaml
+---
+title: "文章标题"
+date: 2026-02-07
+tags: [llm, agent]
+---
 ```
-# 更新子模块到最新版本
-git submodule update --remote themes/hugo-kiera
-```
-查看子模块状态：
 
+文章中的图片建议放在 `images/`。
 
-```# 查看子模块信息
-git submodule status
-```
-记住：
+## 备注
 
-子模块的内容不会自动随主仓库一起克隆，需要特别处理
-子模块有自己的 Git 历史记录，可以独立管理
-主仓库中记录的是子模块的特定提交版本（那个 5676dfa 就是提交的 hash）
-更新子模块后，主仓库也需要提交这个更新
-
-这就是为什么你在 GitHub 上看到 hugo-kiera @ 5676dfa 是一个链接，它指向的是主题仓库的特定版本。
+仓库中保留了一些历史 Hugo 文件（例如 `content/`、`static/`、`hugo.toml` 等），但当前本地预览与 GitHub Pages 构建以 Jekyll 为准。

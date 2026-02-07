@@ -1,9 +1,9 @@
-name: Deploy site to Pages
+name: Deploy Pages (From Private Source)
 
 on:
-  # Public repo should not be used for day-to-day edits; deployments are driven
-  # by pulling from the private source repo.
   workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: read
@@ -18,18 +18,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (public repo, for workflow context)
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
+
+      - name: Checkout (private source repo)
+        uses: actions/checkout@v4
+        with:
+          repository: hwb96/hwb96.github.io-src
+          ref: main
+          path: src_repo
+          ssh-key: ${{ secrets.SRC_DEPLOY_KEY }}
           fetch-depth: 0
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
+      - name: Build with Jekyll (private source)
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./src_repo
           destination: ./_site
 
       - name: Upload artifact
@@ -47,3 +56,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+

@@ -176,3 +176,11 @@ cython_debug/
 public/
 .hugo_build.lock
 resources/
+
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/

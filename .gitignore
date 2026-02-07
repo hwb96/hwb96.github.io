@@ -183,4 +183,11 @@ _site/
 .jekyll-metadata
 .sass-cache/
 .bundle/
-vendor/
+/vendor/
+
+# macOS
+.DS_Store
+
+# Legacy Hugo leftovers (repo used to be Hugo-based)
+/themes/
+/content/

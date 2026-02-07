@@ -191,3 +191,6 @@ _site/
 # Legacy Hugo leftovers (repo used to be Hugo-based)
 /themes/
 /content/
+
+# Local screenshots (do not publish)
+/images/Snipaste_*.png

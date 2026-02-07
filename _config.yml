@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Han Wenbo"
 title_separator          : "-"
 name                     : &name "Han Wenbo"
-description              : &description "NLP / LLM 算法工程师，专注模型训练、部署与智能体落地。"   # Default description if not overridden by a page
+description              : &description "NLP / LLM 算法工程师"   # Default description if not overridden by a page
 url                      : https://hwb96.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Han Wenbo"
   pronouns         : # example: "she/her"  
-  bio              : "NLP / LLM 算法工程师，专注模型训练、部署与智能体落地。"
+  bio              : "NLP / LLM 算法工程师"
   location         : "Hangzhou, China"
   employer         :
   uri              : # URL

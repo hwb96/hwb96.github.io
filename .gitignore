@@ -194,3 +194,6 @@ _site/
 
 # Local screenshots (do not publish)
 /images/Snipaste_*.png
+
+# Local personal photos (do not publish; use life.png as the canonical filename)
+/images/个人照片.png

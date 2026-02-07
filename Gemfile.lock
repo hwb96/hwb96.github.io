@@ -307,11 +307,6 @@ PLATFORMS
 DEPENDENCIES
   connection_pool (= 2.5.0)
   github-pages
-  jekyll
-  jekyll-feed
-  jekyll-redirect-from
-  jekyll-sitemap
-  jemoji
   webrick (~> 1.8)
 
 BUNDLED WITH

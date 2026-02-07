@@ -1,0 +1,358 @@
+/* 导入Google字体 - 添加到hugo.toml的params部分：
+google_fonts = [
+    "Playfair Display:400,700",
+    "Georgia",
+    "PT Serif:400,700",
+    "Merriweather:400,700"
+] */
+/* 调整header区域布局#这段用来调整大标题和post，tags，about之间的距离 */
+#container header {
+    position: relative;
+    margin-bottom: -0.5em;
+}
+/* 调整标题和副标题 */
+#container header h1 {
+    margin-bottom: 0em;
+    padding-right: 1px; /* 为social media图标留出空间 */
+}
+/* 英文字体样式设置 */
+body {
+    font-family: "Georgia", "PT Serif", "Merriweather", "SimSun", "宋体", serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    font-size: 16px;
+    background-color: #ffffff;
+}
+:root {
+  --nyt-blue: #326891;
+  --nyt-blue-hover: #27496d;
+  --text-color: #222;
+  --muted-color: #6b7280;
+  --divider-color: #e5e7eb;
+}
+
+
+/* 网站标题样式 */
+.site-title a,
+.site-title,
+header h1 a {
+    font-family: "Playfair Display", "Georgia", serif;
+    color: #000000 !important;
+    font-size: 1em;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 0px;
+}
+
+/* 副标题/tagline样式 */
+.tagline {
+    font-family: "Georgia", "PT Serif", serif;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 700;
+    color: #666;
+    margin-top: 0.2em;
+}
+
+/* 文章标题样式 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", "Georgia", serif;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* 明确设置层级标题字号，确保 H1 > H2 > H3 */
+h1 {
+    font-size: 1.8em;
+    line-height: 1.3;
+    margin-top: 1.4em;
+    margin-bottom: 0.7em;
+}
+
+
+
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.35;
+}
+
+h3 {
+    font-size: 1.25em;
+    line-height: 1.4;
+}
+
+h4 {
+    font-size: 1.1em;
+    line-height: 1.45;
+}
+
+
+
+/* 调整文章内容的上边距 */
+/* 正文排版：提升可读性，不给正文加下划线 */
+#container main article {
+    font-family: "Georgia", "PT Serif", serif;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+#container main article p {
+    margin: 0.8em 0;
+    line-height: 1.7;
+}
+
+
+/* 日期样式也需要调整以保持一致性，注意这个段落能解决日期和正文之间间距过大的问题。 */
+.post-date {
+    font-family: "Georgia", serif;
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    /*margin: 1em;  !* 移除垂直边距 *!*/
+    /*padding: -1em; !* 移除内边距 *!*/
+    display: inline-block;
+    margin-right: 3em;
+}
+
+
+/* 链接样式（仅作用于正文内容），导航等不受影响 */
+#container main article a {
+    color: var(--nyt-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.15s ease;
+}
+#container main article a:hover {
+    color: var(--nyt-blue-hover);
+    text-decoration-thickness: 2px;
+}
+
+/* 已访问的链接样式 */
+
+
+
+
+/* 引用块样式 */
+blockquote {
+    font-family: "Georgia", "PT Serif", serif;
+    font-style: italic;
+    margin: 1.5em 0;
+    padding: 0 0 0 1.5em;
+    border-left: 3px solid #ccc;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+/* 代码块样式：修复前景/背景同色问题，提升可读性 */
+pre code,
+#container main article pre code {
+    background-color: #f6f8fa;
+    color: #24292e;
+    padding: 0.8em 1em;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    display: block;
+    overflow-x: auto;
+}
+
+/* 行内代码（非代码块）样式 */
+#container main article p code,
+#container main article li code {
+    padding: 0.1em 0.3em;
+    background-color: #f6f8fa;
+    color: #24292e;
+    border-radius: 3px;
+    font-size: 0.95em;
+}
+
+/* 或更具体的选择器 */
+
+aside > ul > li:last-child {
+  display: none !important;
+}
+/* 修正文章页 aside 列表被正文列表缩进样式误伤的问题 */
+#container main article aside ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#container main article aside ul li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* 隐藏空白的featured_image div */
+/* 隐藏空白featured_image */
+div.featured_image {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* 列表样式：恢复合理的缩进与间距，避免序号/圆点过于靠左 */
+#container main article ul,
+#container main article ol {
+    font-family: "Georgia", "PT Serif", serif;
+    margin: 0.6em 0;
+    line-height: 1.7;
+}
+/* 无序列表：稍加缩进（圆点在外侧）*/
+#container main article ul {
+    list-style-position: outside !important;
+    padding-left: 1.6em !important;
+}
+/* 有序列表：序号在外侧并留出足够缩进 */
+#container main article ol {
+    list-style-position: outside !important;
+    padding-left: 2em !important;
+    margin-left: 0 !important;
+}
+/* 嵌套列表轻微缩进 */
+#container main article li > ul,
+#container main article li > ol {
+    margin: 0.2em 0;
+    padding-left: 1.4em !important;
+}
+#container main article li {
+    margin: 0.25em 0;
+}
+
+
+
+/* 修复首页/导航等非正文区域在暗色模式下链接变白导致“看不见”的问题
+   我们强制这些区域的链接与图标使用深色，适配我们统一的浅色背景 */
+#container header a,
+#container nav a,
+#container footer a {
+    color: #1f2937 !important; /* 深灰，浅底可见 */
+    text-decoration: none;
+}
+
+#container header ul#social-media a,
+#container header ul#social-media a i,
+#container header ul#social-media i {
+    color: #111827 !important; /* 恢复 GitHub/Twitter 图标可见 */
+}
+#container nav ul li a.active {
+    border-bottom-color: #666666 !important; /* 保持激活态底边可见 */
+}
+
+
+
+
+#container main section#home .read-more { color: #326891 !important; }
+.read-more:hover { color: #27496d; }
+
+
+/*!* 移除header中的social media *!*/
+/*#container header ul#social-media {*/
+/*   display: none;*/
+/*}*/
+
+/* posts 列表页标题颜色可见 */
+#container main section#list ul li a {
+  color: var(--nyt-blue) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#container main section#list ul li a:hover { color: var(--nyt-blue-hover) !important; }
+#container main section#list time.date-meta { color: #6b7280; }
+
+/* 首页标题字体略调小、颜色可见 */
+#container main section#home ul li h1 {
+  font-size: 1.2em;
+  line-height: 1.35;
+  margin: 0.2em 0 0.2em;
+}
+#container main section#home ul li h1 a {
+  color: var(--nyt-blue) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#container main section#home ul li h1 a:hover {
+  color: var(--nyt-blue-hover) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 首页列表中的链接（除标题外）使用 NYT 蓝色 + 下划线，让 Read more 可见 */
+#container main section#home ul li a {
+  color: var(--nyt-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#container main section#home ul li a:hover { color: var(--nyt-blue-hover); }
+/* 首页摘要文字大小与文章正文一致 */
+#container main section#home p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0.4em 0 0.4em;
+}
+
+/* 首页卡片之间添加分隔线 */
+#container main section#home ul li {
+  padding-bottom: 0.3em;
+  margin-bottom: 0.3em;
+}
+#container main section#home ul li:not(:first-child) {
+  border-top: 1px solid var(--divider-color);
+  padding-top: 0.3em;
+}
+
+/* 临时隐藏首页末尾的 Read more 链接（直接子元素的最后一个 a 即为 read more）*/
+#container main section#home ul li > a:last-of-type { display: none !important; }
+
+/* 统一文章页标题大小与首页一致 */
+#container main article > h1 {
+  font-size: 1.35em !important;
+  line-height: 1.35;
+  margin: 0.2em 0 0.3em;
+}
+
+/* 确保正文内的其它 H1/H2/H3/H4 小于文章主标题（1.2em） */
+#container main article h1:not(:first-of-type) { font-size: 1.15em !important; line-height: 1.35; }
+#container main article h2 { font-size: 1.075em !important; line-height: 1.4; }
+#container main article h3 { font-size: 1.025em !important; line-height: 1.45; }
+#container main article h4 { font-size: 1em !important; line-height: 1.5; }
+
+
+/* 统一日期（aside）在首页与文章页的间距与颜色 */
+#container main section#home ul li aside,
+#container main article aside {
+  margin: 0.2em 0 0.4em !important;
+  color: var(--muted-color);
+}
+
+
+
+/* 代码块外部黄色背景/内嵌阴影等去除，统一为 GitHub 风格浅底 */
+#container main article > pre,
+#container main article .highlight pre,
+#container main article pre {
+  background: #f6f8fa !important;
+  color: #24292e !important;
+  border: 1px solid #e1e4e8 !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+}
+/* 将代码块内边距统一 */
+#container main article pre { padding: 0.8em 1em !important; }
+
+/* 移动端适配：更贴近 m.cn.nytimes.com 的节奏 */
+@media (max-width: 800px) {
+  #container main section#home ul li h1 { font-size: 1.1em; }
+  #container main article > h1 { font-size: 1.2em !important; }
+  #container main section#home ul li { padding-bottom: .4em; margin-bottom: .4em; }
+  #container main section#home ul li:not(:first-child) { padding-top: .4em; }
+}
+
+#container main article .highlight pre { padding: 0.8em 1em !important; }
+
+
+
+

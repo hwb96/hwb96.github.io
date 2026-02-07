@@ -1,0 +1,68 @@
+baseurl = "https://hwb96.github.io/"
+#title = "New Hipster by Han Wenbo"
+title = "Han Wenbo"
+canonifyurls = true
+theme = "hugo-kiera"
+#disqusShortname = "momo"
+
+# 分页设置
+[pagination]
+  pagersize = 6  # 每页显示的文章数
+  path = 'page'
+
+# 基本设置
+summaryLength = 30  # 摘要长度
+enableEmoji = true  # 启用 emoji 支持
+pygmentsCodeFences = true  # 启用代码高亮
+
+# 作者信息设置
+[params.author]
+    name = "HanWenbo"
+    github = "hwb96"
+    #gitlab = "username"
+    #linkedin = "username"
+    #facebook = "username"
+    twitter = "realhanwenbo"
+    #instagram = "username"
+    #stackoverflow = "username"
+    #youtube = "user/username"
+    #devto = "username"
+
+[params]
+    tagline = "Focus on technology, trends, and their intertwined politics."
+#    description = "Kiera: A Hugo theme for creative and technical writing."
+    #images = [""] # 用于 opengraph/twitter cards
+
+    # 自定义 CSS 文件路径（注意：这里只写路径）
+    customCSS = ["css/custom.css"]  # 指向你的自定义 CSS 文件
+    mathjax = true
+    homepageLength = 10  # 主页显示的文章数量
+    CommentAutoload = false
+    # 添加 Google 中文字体
+    google_fonts = [
+        "Playfair Display:400,700",
+        "PT Serif:400,700",
+        "Merriweather:400,700"
+    ]
+
+    #disableDarkModeCSS = false  # 是否禁用暗黑模式 CSS
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    weight = 1000
+#
+#  [[menu.main]]
+#    identifier = "categories"
+#    name = "Categories"
+#    url = "/categories"
+#    weight = 1
+
+# 语法高亮改为 GitHub 风格（Chroma），使用内联样式以确保主题不覆盖
+[markup]
+  [markup.highlight]
+    style = "github"
+    noClasses = true
+    guessSyntax = true
+    lineNos = false
